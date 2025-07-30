@@ -48,6 +48,7 @@
       align-items: center;
       justify-content: center;
       height: 3rem;
+      font-family: 'Oxanium', sans-serif;
     }
     /* Modal */
     .modal {
@@ -75,6 +76,7 @@
       overflow-y: auto;
       position: relative;
       padding-bottom: 4rem;
+      font-family: 'Oxanium', sans-serif;
     }
     .modal iframe {
       width: 100%;
@@ -85,9 +87,13 @@
     .modal h2 {
       margin: 0.5rem 0;
       color: #FF007F;
+      font-family: 'Oxanium', sans-serif;
     }
     .modal ul {
       padding-left: 1rem;
+    }
+    .modal ul li {
+      font-family: 'Oxanium', sans-serif;
     }
     .close-btn {
       display: block;
@@ -100,6 +106,10 @@
       cursor: pointer;
       font-size: 1.1rem;
       min-width: 120px;
+      font-family: 'Oxanium', sans-serif;
+    }
+    .modal p {
+      font-family: 'Oxanium', sans-serif;
     }
 
     .modal-content > *:not(.close-btn) {
@@ -264,6 +274,15 @@
         cerrarModal();
       }
     });
-  </script>
+</script>
+<script>
+function enviarAltura() {
+  const altura = document.body.scrollHeight;
+  parent.postMessage({ tipo: 'alturaIframe', altura }, '*');
+}
+
+window.addEventListener('load', enviarAltura);
+window.addEventListener('resize', enviarAltura);
+</script>
 </body>
 </html>
