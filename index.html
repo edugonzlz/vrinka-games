@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universos VR</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    .universo {
+      padding: 1rem;
+    }
+    .universo-logo {
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+    .juegos-lista {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+    .juego {
+      flex: 0 0 auto;
+      width: 140px;
+      background: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      text-align: center;
+    }
+    .juego img {
+      width: 100%;
+      display: block;
+    }
+    .juego-nombre {
+      padding: 0.5rem;
+      font-weight: bold;
+    }
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      z-index: 100;
+      display: none;
+    }
+    .modal-content {
+      background: #222;
+      padding: 1rem;
+      max-width: 500px;
+      width: 100%;
+      border-radius: 8px;
+    }
+    .modal iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+      margin-bottom: 1rem;
+    }
+    .modal h2 {
+      margin: 0.5rem 0;
+    }
+    .modal ul {
+      padding-left: 1rem;
+    }
+    .close-btn {
+      background: #ff007f;
+      border: none;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    @media screen and (min-width: 768px) {
+      .universo {
+        padding: 2rem;
+      }
+      .universo-logo {
+        max-width: 300px;
+        margin-bottom: 2rem;
+      }
+      .juego {
+        width: 200px;
+      }
+      .juego-nombre {
+        font-size: 1.1rem;
+      }
+      .modal-content {
+        max-width: 700px;
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="universo">
+    <img src="universo_1_logo.png" alt="Universo 1" class="universo-logo" />
+    <div class="juegos-lista">
+      <div class="juego" onclick="abrirModal('Juego 1', 'Descripción del juego 1', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Multijugador', 'Cooperativo', '10 min', 'Media', 'Para grupos'])">
+        <img src="01.png" alt="Juego 1" />
+        <div class="juego-nombre">Juego 1</div>
+      </div>
+      <div class="juego" onclick="abrirModal('Juego 2', 'Descripción del juego 2', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Individual', 'Exploración', '15 min', 'Alta', 'Inmersivo'])">
+        <img src="02.png" alt="Juego 2" />
+        <div class="juego-nombre">Juego 2</div>
+      </div>
+      <div class="juego" onclick="abrirModal('Juego 3', 'Descripción del juego 3', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Arcade', 'Competitivo', '5 min', 'Baja', 'Rejugable'])">
+        <img src="03.png" alt="Juego 3" />
+        <div class="juego-nombre">Juego 3</div>
+      </div>
+      <div class="juego" onclick="abrirModal('Juego 4', 'Descripción del juego 4', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Cooperativo', 'Escape room', '20 min', 'Media', 'Narrativo'])">
+        <img src="04.png" alt="Juego 4" />
+        <div class="juego-nombre">Juego 4</div>
+      </div>
+      <div class="juego" onclick="abrirModal('Juego 5', 'Descripción del juego 5', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Puzzle', 'Relajado', '10 min', 'Baja', 'Educativo'])">
+        <img src="05.png" alt="Juego 5" />
+        <div class="juego-nombre">Juego 5</div>
+      </div>
+      <div class="juego" onclick="abrirModal('Juego 6', 'Descripción del juego 6', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Terror', 'Multijugador', '15 min', 'Alta', 'Adrenalina'])">
+        <img src="06.png" alt="Juego 6" />
+        <div class="juego-nombre">Juego 6</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="universo">
+    <img src="universo_2_logo.png" alt="Universo 2" class="universo-logo" />
+    <div class="juegos-lista">
+      <!-- Juegos universo 2 -->
+    </div>
+  </div>
+
+  <div class="universo">
+    <img src="logo_universo3.png" alt="Universo 3" class="universo-logo" />
+    <div class="juegos-lista">
+      <!-- Juegos universo 3 -->
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <iframe id="modal-video" src="" allowfullscreen></iframe>
+      <h2 id="modal-titulo"></h2>
+      <p id="modal-descripcion"></p>
+      <ul id="modal-caracteristicas"></ul>
+      <button class="close-btn" onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    function abrirModal(nombre, descripcion, videoURL, caracteristicas) {
+      document.getElementById('modal-titulo').textContent = nombre;
+      document.getElementById('modal-descripcion').textContent = descripcion;
+      document.getElementById('modal-video').src = videoURL;
+      const lista = document.getElementById('modal-caracteristicas');
+      lista.innerHTML = '';
+      caracteristicas.forEach(c => {
+        const li = document.createElement('li');
+        li.textContent = c;
+        lista.appendChild(li);
+      });
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+      document.getElementById('modal').style.display = 'none';
+      document.getElementById('modal-video').src = '';
+    }
+  </script>
+</body>
+</html>
