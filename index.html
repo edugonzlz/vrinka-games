@@ -242,7 +242,7 @@
         const match = url.match(/(?:watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/);
         return match ? `https://www.youtube.com/embed/${match[1]}` : url;
       } else if (url.includes('vimeo.com')) {
-        const match = url.match(/vimeo\.com\/(\d+)/);
+        const match = url.match(/vimeo\.com\/(?:showcase\/\d+\/video\/|video\/|)(\d+)/);
         return match ? `https://player.vimeo.com/video/${match[1]}` : url;
       }
       return url;
