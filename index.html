@@ -25,7 +25,9 @@
       display: flex;
       overflow-x: auto;
       gap: 1rem;
-      padding-bottom: 1rem;
+      padding: 0;
+      margin-left: 0;
+      margin-right: 0;
     }
     .juego {
       flex: 0 0 auto;
@@ -229,7 +231,6 @@
           universosContainer.insertBefore(universoDiv, document.getElementById('modal'));
         });
         document.getElementById('loader').remove();
-        enviarAltura();
       } catch (err) {
         console.error("Error cargando datos:", err);
         document.getElementById('loader').textContent = 'Error al cargar los juegos.';
@@ -275,28 +276,6 @@
         cerrarModal();
       }
     });
-</script>
-<script>
-function enviarAltura() {
-  const altura = document.body.scrollHeight;
-  parent.postMessage({ tipo: 'alturaIframe', altura }, '*');
-}
-
-window.addEventListener('load', enviarAltura);
-window.addEventListener('resize', enviarAltura);
-</script>
-</script>
-
-<!-- Script para ajustar dinámicamente la altura del iframe desde la página principal -->
-<script>
-  window.addEventListener('message', function(event) {
-    if (event.data?.tipo === 'alturaIframe' && typeof event.data.altura === 'number') {
-      const iframe = document.querySelector('iframe[src*="vrinka-games"]');
-      if (iframe) {
-        iframe.style.height = event.data.altura + 'px';
-      }
-    }
-  });
 </script>
 </body>
 </html>
