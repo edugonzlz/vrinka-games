@@ -116,7 +116,7 @@
         margin-bottom: 2rem;
       }
       .juego {
-        width: 200px;
+        width: 300px;
       }
       .juego-nombre {
         font-size: 1.1rem;
@@ -189,6 +189,9 @@
           logo.src = `logos/${juegos[0].universe_file}.png`;
           logo.alt = juegos[0].universe;
           logo.className = 'universo-logo';
+          if (juegos[0].universe.toLowerCase() === 'spawnpoint') {
+            logo.style.maxHeight = '66px';
+          }
           universoDiv.appendChild(logo);
 
           const lista = document.createElement('div');
