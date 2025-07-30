@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Universos VR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background: #111;
+      font-family: 'Oxanium', sans-serif;
+      background: #2C2C2C;
       color: #fff;
     }
     .universo {
@@ -29,7 +30,8 @@
     .juego {
       flex: 0 0 auto;
       width: 140px;
-      background: #222;
+      background: #1e1e1e;
+      border: 2px solid #FF007F;
       border-radius: 8px;
       overflow: hidden;
       cursor: pointer;
@@ -59,12 +61,16 @@
       display: none;
     }
     .modal-content {
-      background: #222;
+      background: #1e1e1e;
       padding: 1rem;
       max-width: 90vw;
       width: 100%;
       border-radius: 8px;
       box-sizing: border-box;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      padding-bottom: 4rem;
     }
     .modal iframe {
       width: 100%;
@@ -74,18 +80,26 @@
     }
     .modal h2 {
       margin: 0.5rem 0;
+      color: #FF007F;
     }
     .modal ul {
       padding-left: 1rem;
     }
     .close-btn {
-      background: #ff007f;
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #007BFF;
       border: none;
       color: #fff;
       padding: 0.5rem 1rem;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 1rem;
+    }
+
+    .modal-content > *:not(.close-btn) {
+      margin-bottom: 2rem;
     }
 
     @media screen and (min-width: 768px) {
@@ -228,6 +242,13 @@
     }
 
     cargarJuegosDesdeGoogleSheet();
+
+    // Permite cerrar el modal al hacer clic fuera del contenido
+    document.getElementById('modal').addEventListener('click', function (e) {
+      if (e.target === this) {
+        cerrarModal();
+      }
+    });
   </script>
 </body>
 </html>
