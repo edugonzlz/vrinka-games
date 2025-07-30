@@ -285,5 +285,18 @@ function enviarAltura() {
 window.addEventListener('load', enviarAltura);
 window.addEventListener('resize', enviarAltura);
 </script>
+</script>
+
+<!-- Script para ajustar dinámicamente la altura del iframe desde la página principal -->
+<script>
+  window.addEventListener('message', function(event) {
+    if (event.data?.tipo === 'alturaIframe' && typeof event.data.altura === 'number') {
+      const iframe = document.querySelector('iframe[src*="vrinka-games"]');
+      if (iframe) {
+        iframe.style.height = event.data.altura + 'px';
+      }
+    }
+  });
+</script>
 </body>
 </html>
