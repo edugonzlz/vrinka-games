@@ -110,48 +110,9 @@
   </style>
 </head>
 <body>
-  <div class="universo">
-    <img src="universo_1_logo.png" alt="Universo 1" class="universo-logo" />
-    <div class="juegos-lista">
-      <div class="juego" onclick="abrirModal('Juego 1', 'Descripción del juego 1', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Multijugador', 'Cooperativo', '10 min', 'Media', 'Para grupos'])">
-        <img src="01.png" alt="Juego 1" />
-        <div class="juego-nombre">Juego 1</div>
-      </div>
-      <div class="juego" onclick="abrirModal('Juego 2', 'Descripción del juego 2', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Individual', 'Exploración', '15 min', 'Alta', 'Inmersivo'])">
-        <img src="02.png" alt="Juego 2" />
-        <div class="juego-nombre">Juego 2</div>
-      </div>
-      <div class="juego" onclick="abrirModal('Juego 3', 'Descripción del juego 3', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Arcade', 'Competitivo', '5 min', 'Baja', 'Rejugable'])">
-        <img src="03.png" alt="Juego 3" />
-        <div class="juego-nombre">Juego 3</div>
-      </div>
-      <div class="juego" onclick="abrirModal('Juego 4', 'Descripción del juego 4', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Cooperativo', 'Escape room', '20 min', 'Media', 'Narrativo'])">
-        <img src="04.png" alt="Juego 4" />
-        <div class="juego-nombre">Juego 4</div>
-      </div>
-      <div class="juego" onclick="abrirModal('Juego 5', 'Descripción del juego 5', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Puzzle', 'Relajado', '10 min', 'Baja', 'Educativo'])">
-        <img src="05.png" alt="Juego 5" />
-        <div class="juego-nombre">Juego 5</div>
-      </div>
-      <div class="juego" onclick="abrirModal('Juego 6', 'Descripción del juego 6', 'https://www.youtube.com/embed/aAy0dgkn5GI', ['Terror', 'Multijugador', '15 min', 'Alta', 'Adrenalina'])">
-        <img src="06.png" alt="Juego 6" />
-        <div class="juego-nombre">Juego 6</div>
-      </div>
-    </div>
-  </div>
 
-  <div class="universo">
-    <img src="universo_2_logo.png" alt="Universo 2" class="universo-logo" />
-    <div class="juegos-lista">
-      <!-- Juegos universo 2 -->
-    </div>
-  </div>
-
-  <div class="universo">
-    <img src="logo_universo3.png" alt="Universo 3" class="universo-logo" />
-    <div class="juegos-lista">
-      <!-- Juegos universo 3 -->
-    </div>
+  <div id="loader" style="text-align: center; padding: 2rem; font-size: 1.2rem;">
+    Cargando juegos...
   </div>
 
   <div class="modal" id="modal">
@@ -165,13 +126,95 @@
   </div>
 
   <script>
-    function abrirModal(nombre, descripcion, videoURL, caracteristicas) {
-      document.getElementById('modal-titulo').textContent = nombre;
-      document.getElementById('modal-descripcion').textContent = descripcion;
-      document.getElementById('modal-video').src = videoURL;
+    async function cargarJuegosDesdeGoogleSheet() {
+      const url = "https://sheets.googleapis.com/v4/spreadsheets/1zEUwnJsfIX44E3ZyM46X6uFpehd7N052dpeTgfAFFs4/values/games-list?key=AIzaSyD3wNY7TWoYhkgkXgyxJG2cpBHo80Uv8ik";
+      
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const [headers, ...rows] = data.values;
+
+        const juegos = rows.map(row => {
+          const juego = {};
+          headers.forEach((key, i) => {
+            // Remap keys to new names where needed
+            let mappedKey = key;
+            if (key === "nombre") mappedKey = "game_name";
+            else if (key === "descripcion") mappedKey = "game_description";
+            else if (key === "caracteristicas") mappedKey = "features";
+            else if (key === "universo_id") mappedKey = "universe";
+            if (mappedKey === "features" && row[i]) {
+              juego[mappedKey] = row[i].split('\n').map(linea => linea.trim()).filter(Boolean);
+            } else {
+              juego[mappedKey] = row[i] || "";
+            }
+          });
+          return juego;
+        });
+
+        const universosContainer = document.body;
+        const juegosPorUniverso = {};
+
+        juegos.forEach(juego => {
+          if (!juegosPorUniverso[juego.universe]) {
+            juegosPorUniverso[juego.universe] = [];
+          }
+          juegosPorUniverso[juego.universe].push(juego);
+        });
+
+        Object.entries(juegosPorUniverso).forEach(([universoId, juegos]) => {
+          const universoDiv = document.createElement('div');
+          universoDiv.className = 'universo';
+
+          const logo = document.createElement('img');
+          logo.src = `logos/${juegos[0].universe_file}.png`;
+          logo.alt = juegos[0].universe;
+          logo.className = 'universo-logo';
+          universoDiv.appendChild(logo);
+
+          const lista = document.createElement('div');
+          lista.className = 'juegos-lista';
+
+          juegos.forEach(j => {
+            const div = document.createElement('div');
+            div.className = 'juego';
+            div.onclick = () => abrirModal(j.game_name, j.game_description, j.video_url, j.features);
+
+            const img = document.createElement('img');
+            img.src = `covers/${j.cover_file}.png`;
+            img.alt = j.game_name;
+
+            const nombre = document.createElement('div');
+            nombre.className = 'juego-nombre';
+            nombre.textContent = j.game_name;
+
+            div.appendChild(img);
+            div.appendChild(nombre);
+            lista.appendChild(div);
+          });
+
+          universoDiv.appendChild(lista);
+          universosContainer.insertBefore(universoDiv, document.getElementById('modal'));
+        });
+        document.getElementById('loader').remove();
+      } catch (err) {
+        console.error("Error cargando datos:", err);
+        document.getElementById('loader').textContent = 'Error al cargar los juegos.';
+      }
+    }
+
+    function convertirAEmbed(url) {
+      const match = url.match(/(?:watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/);
+      return match ? `https://www.youtube.com/embed/${match[1]}` : url;
+    }
+
+    function abrirModal(game_name, game_description, videoURL, features) {
+      document.getElementById('modal-titulo').textContent = game_name;
+      document.getElementById('modal-descripcion').textContent = game_description;
+      document.getElementById('modal-video').src = convertirAEmbed(videoURL);
       const lista = document.getElementById('modal-caracteristicas');
       lista.innerHTML = '';
-      caracteristicas.forEach(c => {
+      features.forEach(c => {
         const li = document.createElement('li');
         li.textContent = c;
         lista.appendChild(li);
@@ -183,6 +226,8 @@
       document.getElementById('modal').style.display = 'none';
       document.getElementById('modal-video').src = '';
     }
+
+    cargarJuegosDesdeGoogleSheet();
   </script>
 </body>
 </html>
