@@ -229,6 +229,7 @@
           universosContainer.insertBefore(universoDiv, document.getElementById('modal'));
         });
         document.getElementById('loader').remove();
+        enviarAltura();
       } catch (err) {
         console.error("Error cargando datos:", err);
         document.getElementById('loader').textContent = 'Error al cargar los juegos.';
