@@ -69,15 +69,14 @@
     }
     .modal-content {
       background: #1e1e1e;
-      padding: 1rem;
-      max-width: 90vw;
-      width: 100%;
+      padding: 1rem 1rem 2rem 1rem;
+      max-width: 100vw;
+      width: 100vw;
       border-radius: 8px;
       box-sizing: border-box;
-      max-height: 90vh;
-      overflow-y: auto;
+      height: 100vh;
+      overflow-y: hidden;
       position: relative;
-      padding-bottom: 4rem;
       font-family: 'Oxanium', sans-serif;
     }
     .modal iframe {
@@ -114,8 +113,22 @@
       font-family: 'Oxanium', sans-serif;
     }
 
-    .modal-content > *:not(.close-btn) {
-      margin-bottom: 2rem;
+    .modal-content > *:not(.close-btn):not(.close-icon) {
+      margin-bottom: 1rem;
+    }
+    .close-icon {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.75rem;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 4rem;
+      cursor: pointer;
+      font-family: 'Oxanium', sans-serif;
+    }
+    .close-icon:hover {
+      color: #FF007F;
     }
 
     @media screen and (min-width: 768px) {
@@ -132,7 +145,7 @@
       }
       .modal-content {
         max-width: 700px;
-        padding: 2rem;
+        padding: 2rem 2rem 2.5rem 2rem;
       }
     }
   </style>
@@ -145,11 +158,11 @@
 
   <div class="modal" id="modal">
     <div class="modal-content">
-      <iframe id="modal-video" src="" allowfullscreen></iframe>
+      <button class="close-icon" onclick="cerrarModal()">×</button>
       <h2 id="modal-titulo"></h2>
+      <iframe id="modal-video" src="" allowfullscreen></iframe>
       <p id="modal-descripcion"></p>
       <ul id="modal-caracteristicas"></ul>
-      <button class="close-btn" onclick="cerrarModal()">Cerrar</button>
     </div>
   </div>
 
