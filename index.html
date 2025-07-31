@@ -153,6 +153,55 @@
         padding: 2rem 2rem 2.5rem 2rem;
       }
     }
+
+    .next-btn {
+      display: block;
+      margin: 2rem auto 1rem auto;
+      background: #9B00FF;
+      border: none;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      min-width: 160px;
+      font-family: 'Oxanium', sans-serif;
+    }
+
+    .next-btn:hover {
+      background: #FF007F;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0;
+      margin-top: 2rem;
+      gap: 1rem;
+    }
+
+    .prev-btn, .next-btn {
+      flex: 1;
+      margin: 0;
+      max-width: 240px;
+      background: #9B00FF;
+      border: none;
+      color: #fff;
+      padding: 1.25rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      min-width: 140px;
+      font-family: 'Oxanium', sans-serif;
+      height: 60px;
+      box-sizing: border-box;
+    }
+
+    .prev-btn:hover, .next-btn:hover {
+      background: #FF007F;
+    }
   </style>
 </head>
 <body>
@@ -168,10 +217,20 @@
       <iframe id="modal-video" src="" allowfullscreen></iframe>
       <p id="modal-descripcion"></p>
       <ul id="modal-caracteristicas"></ul>
+      <div class="modal-buttons">
+        <button class="prev-btn" onclick="mostrarJuegoAnterior()">Anterior</button>
+        <button class="next-btn" onclick="mostrarSiguienteJuego()">Siguiente</button>
+      </div>
     </div>
   </div>
 
   <script>
+    let juegosCargados = [];
+    let juegoActualIndex = -1;
+    let juegosActualesUniverso = [];
+    let universoActual = "";
+    let juegoActualId = "";
+
     async function cargarJuegosDesdeGoogleSheet() {
       const url = "https://sheets.googleapis.com/v4/spreadsheets/1zEUwnJsfIX44E3ZyM46X6uFpehd7N052dpeTgfAFFs4/values/games-list?key=AIzaSyD3wNY7TWoYhkgkXgyxJG2cpBHo80Uv8ik";
       
@@ -183,7 +242,6 @@
         const juegos = rows.map(row => {
           const juego = {};
           headers.forEach((key, i) => {
-            // Remap keys to new names where needed
             let mappedKey = key;
             if (key === "nombre") mappedKey = "game_name";
             else if (key === "descripcion") mappedKey = "game_description";
@@ -195,8 +253,15 @@
               juego[mappedKey] = row[i] || "";
             }
           });
+          // Añadir game_id directamente desde la fila (asumiendo que existe en headers)
+          const gameIdIndex = headers.indexOf('game_id');
+          if (gameIdIndex !== -1) {
+            juego.game_id = row[gameIdIndex] || "";
+          }
           return juego;
         });
+
+        juegosCargados = juegos;
 
         const universosContainer = document.body;
         const juegosPorUniverso = {};
@@ -227,7 +292,7 @@
           juegos.forEach(j => {
             const div = document.createElement('div');
             div.className = 'juego';
-            div.onclick = () => abrirModal(j.game_name, j.game_description, j.video_url, j.features);
+            div.onclick = () => abrirModal(j.game_name, j.game_description, j.video_url, j.features, j.game_id);
 
             const img = document.createElement('img');
             img.src = `covers/${j.cover_file}.png`;
@@ -259,8 +324,20 @@
       return url;
     }
 
-    function abrirModal(game_name, game_description, videoURL, features) {
-      document.getElementById('modal-titulo').textContent = game_name;
+    function abrirModal(game_name, game_description, videoURL, features, game_id) {
+      const juego = juegosCargados.find(j => j.game_id === game_id);
+      const universo = juego?.universe;
+      juegoActualId = game_id;
+      // const juegoActualId = juego?.game_id;
+      const juegosEnOrden = juegosCargados
+        .filter(j => j.game_id)
+        .sort((a, b) => a.game_id.localeCompare(b.game_id));
+
+      juegoActualIndex = juegosEnOrden.findIndex(j => j.game_id === juegoActualId);
+      juegosActualesUniverso = juegosCargados.filter(j => j.universe === universo);
+      universoActual = universo;
+
+      document.getElementById('modal-titulo').textContent = `${game_name} (${game_id})`;
       document.getElementById('modal-descripcion').textContent = game_description;
       document.getElementById('modal-video').src = convertirAEmbed(videoURL);
       const lista = document.getElementById('modal-caracteristicas');
@@ -270,12 +347,60 @@
         li.textContent = c;
         lista.appendChild(li);
       });
+
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+
+      if (juegoActualIndex > 0) {
+        prevBtn.style.display = 'block';
+        prevBtn.style.marginRight = 'auto';
+      } else {
+        prevBtn.style.display = 'none';
+        nextBtn.style.marginLeft = 'auto';
+      }
+
+      if (juegoActualIndex < juegosEnOrden.length - 1) {
+        nextBtn.style.display = 'block';
+        nextBtn.style.marginLeft = 'auto';
+      } else {
+        nextBtn.style.display = 'none';
+        prevBtn.style.marginRight = 'auto';
+      }
+
       document.getElementById('modal').style.display = 'flex';
     }
 
     function cerrarModal() {
       document.getElementById('modal').style.display = 'none';
       document.getElementById('modal-video').src = '';
+    }
+
+    function mostrarSiguienteJuego() {
+      if (!juegoActualId) return;
+
+      const juegosEnOrden = juegosCargados
+        .filter(j => j.game_id)
+        .sort((a, b) => a.game_id.localeCompare(b.game_id));
+
+      const actualIndex = juegosEnOrden.findIndex(j => j.game_id === juegoActualId);
+
+      const siguiente = juegosEnOrden[actualIndex + 1];
+      if (!siguiente) return;
+      abrirModal(siguiente.game_name, siguiente.game_description, siguiente.video_url, siguiente.features, siguiente.game_id);
+    }
+
+    function mostrarJuegoAnterior() {
+      if (!juegoActualId) return;
+
+      const juegosEnOrden = juegosCargados
+        .filter(j => j.game_id)
+        .sort((a, b) => a.game_id.localeCompare(b.game_id));
+
+      const actualIndex = juegosEnOrden.findIndex(j => j.game_id === juegoActualId);
+
+      if (actualIndex <= 0) return;
+      const anterior = juegosEnOrden[actualIndex - 1];
+      abrirModal(anterior.game_name, anterior.game_description, anterior.video_url, anterior.features, anterior.game_id);
     }
 
     cargarJuegosDesdeGoogleSheet();
