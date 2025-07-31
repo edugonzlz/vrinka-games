@@ -8,7 +8,14 @@
   <style>
     html, body {
       height: 100%;
-      overflow: hidden;
+    }
+
+    body {
+      overflow-y: auto;
+    }
+
+    iframe.embedded body {
+      overflow-y: hidden;
     }
     body {
       margin: 0;
@@ -337,7 +344,7 @@
       juegosActualesUniverso = juegosCargados.filter(j => j.universe === universo);
       universoActual = universo;
 
-      document.getElementById('modal-titulo').textContent = `${game_name} (${game_id})`;
+      document.getElementById('modal-titulo').textContent = game_name;
       document.getElementById('modal-descripcion').textContent = game_description;
       document.getElementById('modal-video').src = convertirAEmbed(videoURL);
       const lista = document.getElementById('modal-caracteristicas');
@@ -412,5 +419,11 @@
       }
     });
 </script>
+  <script>
+  // Detectar si la página está embebida en un iframe
+  if (window.self !== window.top) {
+    document.body.classList.add('embedded');
+  }
+  </script>
 </body>
 </html>
