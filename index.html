@@ -12,6 +12,16 @@
       background: #2C2C2C;
       color: #fff;
     }
+    /* Ocultar scrolls */
+    body, .juegos-lista, .modal-content {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+    }
+    body::-webkit-scrollbar,
+    .juegos-lista::-webkit-scrollbar,
+    .modal-content::-webkit-scrollbar {
+      display: none; /* Chrome, Safari y Opera */
+    }
     .universo {
       padding: 2rem 0;
     }
@@ -30,7 +40,7 @@
     }
     .juego {
       flex: 0 0 auto;
-      width: 140px;
+      width: 245px;
       background: #1e1e1e;
       border: 2px solid #FF007F;
       border-radius: 8px;
@@ -41,15 +51,6 @@
     .juego img {
       width: 100%;
       display: block;
-    }
-    .juego-nombre {
-      padding: 0.5rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 3rem;
-      font-family: 'Oxanium', sans-serif;
     }
     /* Modal */
     .modal {
@@ -128,9 +129,6 @@
       }
       .juego {
         width: 300px;
-      }
-      .juego-nombre {
-        font-size: 1.1rem;
       }
       .modal-content {
         max-width: 700px;
@@ -217,12 +215,7 @@
             img.src = `covers/${j.cover_file}.png`;
             img.alt = j.game_name;
 
-            const nombre = document.createElement('div');
-            nombre.className = 'juego-nombre';
-            nombre.textContent = j.game_name;
-
             div.appendChild(img);
-            div.appendChild(nombre);
             lista.appendChild(div);
           });
 
