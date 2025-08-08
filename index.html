@@ -34,12 +34,14 @@
       display: none; /* Chrome, Safari y Opera */
     }
     .universo {
-      padding: 2rem 0;
+      padding: 2rem 1rem; /* Añadido padding horizontal */
       overflow-x: hidden; /* Evita el scroll horizontal de la página */
+      box-sizing: border-box;
     }
     .universo-logo {
       width: auto;
       max-height: 180px; /* 80% más grande */
+      max-width: 100%; /* Evita que el logo se desborde */
       margin: 0 auto 1rem; /* Espacio reducido */
       display: block;
     }
@@ -166,7 +168,7 @@
 
     @media screen and (min-width: 768px) {
       .universo {
-        padding: 3rem 0;
+        padding: 3rem 2rem; /* Añadido padding horizontal */
       }
       .universo-logo {
         width: auto;
