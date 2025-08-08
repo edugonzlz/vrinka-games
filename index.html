@@ -38,8 +38,8 @@
     }
     .universo-logo {
       width: auto;
-      max-height: 100px;
-      margin: 0 auto 2rem;
+      max-height: 180px; /* 80% más grande */
+      margin: 0 auto 1rem; /* Espacio reducido */
       display: block;
     }
     .juegos-lista {
@@ -169,8 +169,8 @@
       }
       .universo-logo {
         width: auto;
-        max-height: 140px;
-        margin-bottom: 3rem;
+        max-height: 252px; /* 80% más grande */
+        margin-bottom: 2rem; /* Espacio reducido */
       }
       .juego {
         width: 300px;
@@ -255,6 +255,7 @@
   <script>
     let juegosCargados = [];
     let juegoActualIndex = -1;
+    let juegosEnOrden = []; // Lista ordenada para navegación
     let juegosActualesUniverso = [];
     let universoActual = "";
     let juegoActualId = "";
@@ -290,6 +291,11 @@
         });
 
         juegosCargados = juegos;
+        // Crear la lista ordenada una sola vez
+        juegosEnOrden = juegosCargados
+          .filter(j => j.game_id)
+          .sort((a, b) => a.game_id.localeCompare(b.game_id));
+
 
         const universosContainer = document.body;
         const juegosPorUniverso = {};
@@ -309,9 +315,6 @@
           logo.src = `logos/${juegos[0].universe_file}.png`;
           logo.alt = juegos[0].universe;
           logo.className = 'universo-logo';
-          if (juegos[0].universe.toLowerCase() === 'spawnpoint') {
-            logo.style.maxHeight = '66px';
-          }
           universoDiv.appendChild(logo);
 
           const lista = document.createElement('div');
@@ -371,10 +374,6 @@
       const universo = juego?.universe;
       juegoActualId = game_id;
       // const juegoActualId = juego?.game_id;
-      const juegosEnOrden = juegosCargados
-        .filter(j => j.game_id)
-        .sort((a, b) => a.game_id.localeCompare(b.game_id));
-
       juegoActualIndex = juegosEnOrden.findIndex(j => j.game_id === juegoActualId);
       juegosActualesUniverso = juegosCargados.filter(j => j.universe === universo);
       universoActual = universo;
@@ -419,11 +418,6 @@
 
     function mostrarSiguienteJuego() {
       if (!juegoActualId) return;
-
-      const juegosEnOrden = juegosCargados
-        .filter(j => j.game_id)
-        .sort((a, b) => a.game_id.localeCompare(b.game_id));
-
       const actualIndex = juegosEnOrden.findIndex(j => j.game_id === juegoActualId);
 
       const siguiente = juegosEnOrden[actualIndex + 1];
@@ -433,11 +427,6 @@
 
     function mostrarJuegoAnterior() {
       if (!juegoActualId) return;
-
-      const juegosEnOrden = juegosCargados
-        .filter(j => j.game_id)
-        .sort((a, b) => a.game_id.localeCompare(b.game_id));
-
       const actualIndex = juegosEnOrden.findIndex(j => j.game_id === juegoActualId);
 
       if (actualIndex <= 0) return;
