@@ -42,8 +42,18 @@
       width: auto;
       max-height: 180px; /* 80% más grande */
       max-width: 100%; /* Evita que el logo se desborde */
-      margin: 0 auto 1rem; /* Espacio reducido */
+      margin: 0 auto 0; /* Margen inferior a cero */
       display: block;
+    }
+    .universo-descripcion {
+      text-align: center;
+      margin: 0 auto 1.5rem;
+      max-width: 800px;
+      padding: 0 1rem;
+      color: #e0e0e0;
+      font-size: 1rem;
+      line-height: 1.5;
+      box-sizing: border-box;
     }
     .juegos-lista {
       display: flex;
@@ -262,64 +272,99 @@
     let juegosActualesUniverso = [];
     let universoActual = "";
     let juegoActualId = "";
+    let universosCargados = [];
 
-    async function cargarJuegosDesdeGoogleSheet() {
-      const url = "https://sheets.googleapis.com/v4/spreadsheets/1zEUwnJsfIX44E3ZyM46X6uFpehd7N052dpeTgfAFFs4/values/game-list?key=AIzaSyD3wNY7TWoYhkgkXgyxJG2cpBHo80Uv8ik";
-      
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        const [headers, ...rows] = data.values;
+    async function fetchData(sheetName) {
+      const spreadsheetId = "1zEUwnJsfIX44E3ZyM46X6uFpehd7N052dpeTgfAFFs4";
+      const apiKey = "AIzaSyD3wNY7TWoYhkgkXgyxJG2cpBHo80Uv8ik";
+      const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+      const res = await fetch(url);
+      if (!res.ok) {
+        throw new Error(`Error fetching sheet ${sheetName}: ${res.statusText}`);
+      }
+      const data = await res.json();
+      // Limpiamos los encabezados para eliminar espacios en blanco accidentales
+      const [rawHeaders, ...rows] = data.values;
+      const headers = rawHeaders.map(h => h.trim());
+      return { headers, rows };
+    }
 
-        const juegos = rows.map(row => {
-          const juego = {};
-          headers.forEach((key, i) => {
-            let mappedKey = key;
-            if (key === "nombre") mappedKey = "game";
-            else if (key === "game_id") mappedKey = "id";
-            else if (key === "descripcion") mappedKey = "description";
-            else if (key === "caracteristicas") mappedKey = "features";
-            else if (key === "universo_id") mappedKey = "universe";
-            if (mappedKey === "features" && row[i]) {
-              juego[mappedKey] = row[i].split('\n').map(linea => linea.trim()).filter(Boolean);
-            } else {
-              juego[mappedKey] = row[i] || "";
-            }
-          });
-          return juego;
+    async function cargarUniversos() {
+      const { headers, rows } = await fetchData("universe-list");
+      universosCargados = rows.map(row => {
+        const universo = {};
+        headers.forEach((key, i) => {
+          // Las columnas son: id, name, logo_file, description, logo_url
+          universo[key] = (row[i] || "").trim();
+        });
+        return universo;
+      });
+    }
+
+    async function cargarJuegos() {
+      const { headers, rows } = await fetchData("game-list");
+
+      juegosCargados = rows.map(row => {
+        // Create an intermediate object mapping headers to row values for easier access.
+        const rowData = {};
+        headers.forEach((header, i) => {
+          rowData[header] = row[i] || "";
         });
 
-        juegosCargados = juegos;
-        // Crear la lista ordenada una sola vez
-        juegosEnOrden = juegosCargados
+        // Explicitly map the sheet columns to the properties our script uses.
+        // This is more robust than a dynamic mapping loop.
+        const featuresValue = (rowData.features || "").trim();
+        return {
+          game: (rowData.name || "").trim(),
+          id: (rowData.id || "").trim(),
+          description: (rowData.description || "").trim(),
+          universeId: (rowData.universe_id || "").trim(),
+          video_url: (rowData.video_url || "").trim(),
+          cover_url: (rowData.cover_url || "").trim(),
+          features: featuresValue ? featuresValue.split('\n').map(linea => linea.trim()).filter(Boolean) : [],
+        };
+      });
+      
+      juegosEnOrden = juegosCargados
           .filter(j => j.id)
           .sort((a, b) => a.id.localeCompare(b.id));
+    }
 
+    async function inicializarPagina() {
+      try {
+        await Promise.all([cargarUniversos(), cargarJuegos()]);
 
+        console.log("Universos cargados:", universosCargados);
+        console.log("Juegos cargados:", juegosCargados);
+        
         const universosContainer = document.body;
-        const juegosPorUniverso = {};
+        let contentRendered = false;
 
-        juegos.forEach(juego => {
-          if (!juegosPorUniverso[juego.universe]) {
-            juegosPorUniverso[juego.universe] = [];
-          }
-          juegosPorUniverso[juego.universe].push(juego);
-        });
+        universosCargados.forEach(universo => {
+          const juegosDelUniverso = juegosCargados.filter(juego => juego.universeId === universo.id);
+          if (juegosDelUniverso.length === 0) return;
 
-        Object.entries(juegosPorUniverso).forEach(([universoId, juegos]) => {
+          contentRendered = true;
           const universoDiv = document.createElement('div');
           universoDiv.className = 'universo';
 
           const logo = document.createElement('img');
-          logo.src = `logos/${juegos[0].universe_file}.png`;
-          logo.alt = juegos[0].universe;
+          logo.src = universo.logo_url;
+          logo.alt = universo.name;
           logo.className = 'universo-logo';
           universoDiv.appendChild(logo);
+
+          if (universo.description) {
+            const descripcion = document.createElement('p');
+            descripcion.className = 'universo-descripcion';
+            descripcion.textContent = universo.description;
+            universoDiv.appendChild(descripcion);
+          }
 
           const lista = document.createElement('div');
           lista.className = 'juegos-lista';
 
-          juegos.forEach(j => {
+          juegosDelUniverso.forEach(j => {
             const div = document.createElement('div');
             div.className = 'juego';
             div.onclick = () => abrirModal(j.game, j.description, j.video_url, j.features, j.id);
@@ -327,11 +372,9 @@
             const placeholder = document.createElement('div');
             placeholder.className = 'juego-placeholder';
             placeholder.textContent = j.game;
-
             const img = document.createElement('img');
             img.alt = j.game;
             img.style.opacity = '0';
-
             img.onload = () => {
               img.style.opacity = '1';
               placeholder.style.display = 'none';
@@ -339,8 +382,7 @@
             img.onerror = () => {
               img.style.display = 'none';
             };
-
-            img.src = `covers/${j.cover_file}.png`;
+            img.src = j.cover_url;
             div.appendChild(placeholder);
             div.appendChild(img);
             lista.appendChild(div);
@@ -349,10 +391,15 @@
           universoDiv.appendChild(lista);
           universosContainer.insertBefore(universoDiv, document.getElementById('modal'));
         });
-        document.getElementById('loader').remove();
+
+        if (contentRendered) {
+          document.getElementById('loader').remove();
+        } else {
+          document.getElementById('loader').textContent = 'No se encontraron juegos. Revisa que los IDs de universo coincidan en ambas hojas de cálculo.';
+        }
       } catch (err) {
         console.error("Error cargando datos:", err);
-        document.getElementById('loader').textContent = 'Error al cargar los juegos.';
+        document.getElementById('loader').textContent = 'Error al cargar los datos. Revisa la consola para más detalles.';
       }
     }
 
@@ -370,12 +417,12 @@
 
     function abrirModal(game, description, videoURL, features, id) {
       const juego = juegosCargados.find(j => j.id === id);
-      const universo = juego?.universe;
+      const universoId = juego?.universeId;
       juegoActualId = id;
       // const juegoActualId = juego?.game_id;
       juegoActualIndex = juegosEnOrden.findIndex(j => j.id === juegoActualId);
-      juegosActualesUniverso = juegosCargados.filter(j => j.universe === universo);
-      universoActual = universo;
+      juegosActualesUniverso = juegosCargados.filter(j => j.universeId === universoId);
+      universoActual = universoId;
 
       document.getElementById('modal-titulo').textContent = game;
       document.getElementById('modal-descripcion').textContent = description;
@@ -433,7 +480,7 @@
       abrirModal(anterior.game, anterior.description, anterior.video_url, anterior.features, anterior.id);
     }
 
-    cargarJuegosDesdeGoogleSheet();
+    inicializarPagina();
 
     // Permite cerrar el modal al hacer clic fuera del contenido
     document.getElementById('modal').addEventListener('click', function (e) {
