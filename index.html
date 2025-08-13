@@ -264,7 +264,7 @@
     let juegoActualId = "";
 
     async function cargarJuegosDesdeGoogleSheet() {
-      const url = "https://sheets.googleapis.com/v4/spreadsheets/1zEUwnJsfIX44E3ZyM46X6uFpehd7N052dpeTgfAFFs4/values/games-list?key=AIzaSyD3wNY7TWoYhkgkXgyxJG2cpBHo80Uv8ik";
+      const url = "https://sheets.googleapis.com/v4/spreadsheets/1zEUwnJsfIX44E3ZyM46X6uFpehd7N052dpeTgfAFFs4/values/game-list?key=AIzaSyD3wNY7TWoYhkgkXgyxJG2cpBHo80Uv8ik";
       
       try {
         const res = await fetch(url);
@@ -275,8 +275,9 @@
           const juego = {};
           headers.forEach((key, i) => {
             let mappedKey = key;
-            if (key === "nombre") mappedKey = "game_name";
-            else if (key === "descripcion") mappedKey = "game_description";
+            if (key === "nombre") mappedKey = "game";
+            else if (key === "game_id") mappedKey = "id";
+            else if (key === "descripcion") mappedKey = "description";
             else if (key === "caracteristicas") mappedKey = "features";
             else if (key === "universo_id") mappedKey = "universe";
             if (mappedKey === "features" && row[i]) {
@@ -285,19 +286,14 @@
               juego[mappedKey] = row[i] || "";
             }
           });
-          // Añadir game_id directamente desde la fila (asumiendo que existe en headers)
-          const gameIdIndex = headers.indexOf('game_id');
-          if (gameIdIndex !== -1) {
-            juego.game_id = row[gameIdIndex] || "";
-          }
           return juego;
         });
 
         juegosCargados = juegos;
         // Crear la lista ordenada una sola vez
         juegosEnOrden = juegosCargados
-          .filter(j => j.game_id)
-          .sort((a, b) => a.game_id.localeCompare(b.game_id));
+          .filter(j => j.id)
+          .sort((a, b) => a.id.localeCompare(b.id));
 
 
         const universosContainer = document.body;
@@ -326,14 +322,14 @@
           juegos.forEach(j => {
             const div = document.createElement('div');
             div.className = 'juego';
-            div.onclick = () => abrirModal(j.game_name, j.game_description, j.video_url, j.features, j.game_id);
+            div.onclick = () => abrirModal(j.game, j.description, j.video_url, j.features, j.id);
 
             const placeholder = document.createElement('div');
             placeholder.className = 'juego-placeholder';
-            placeholder.textContent = j.game_name;
+            placeholder.textContent = j.game;
 
             const img = document.createElement('img');
-            img.alt = j.game_name;
+            img.alt = j.game;
             img.style.opacity = '0';
 
             img.onload = () => {
@@ -372,17 +368,17 @@
       return url;
     }
 
-    function abrirModal(game_name, game_description, videoURL, features, game_id) {
-      const juego = juegosCargados.find(j => j.game_id === game_id);
+    function abrirModal(game, description, videoURL, features, id) {
+      const juego = juegosCargados.find(j => j.id === id);
       const universo = juego?.universe;
-      juegoActualId = game_id;
+      juegoActualId = id;
       // const juegoActualId = juego?.game_id;
-      juegoActualIndex = juegosEnOrden.findIndex(j => j.game_id === juegoActualId);
+      juegoActualIndex = juegosEnOrden.findIndex(j => j.id === juegoActualId);
       juegosActualesUniverso = juegosCargados.filter(j => j.universe === universo);
       universoActual = universo;
 
-      document.getElementById('modal-titulo').textContent = game_name;
-      document.getElementById('modal-descripcion').textContent = game_description;
+      document.getElementById('modal-titulo').textContent = game;
+      document.getElementById('modal-descripcion').textContent = description;
       document.getElementById('modal-video').src = convertirAEmbed(videoURL);
       const lista = document.getElementById('modal-caracteristicas');
       lista.innerHTML = '';
@@ -421,20 +417,20 @@
 
     function mostrarSiguienteJuego() {
       if (!juegoActualId) return;
-      const actualIndex = juegosEnOrden.findIndex(j => j.game_id === juegoActualId);
+      const actualIndex = juegosEnOrden.findIndex(j => j.id === juegoActualId);
 
       const siguiente = juegosEnOrden[actualIndex + 1];
       if (!siguiente) return;
-      abrirModal(siguiente.game_name, siguiente.game_description, siguiente.video_url, siguiente.features, siguiente.game_id);
+      abrirModal(siguiente.game, siguiente.description, siguiente.video_url, siguiente.features, siguiente.id);
     }
 
     function mostrarJuegoAnterior() {
       if (!juegoActualId) return;
-      const actualIndex = juegosEnOrden.findIndex(j => j.game_id === juegoActualId);
+      const actualIndex = juegosEnOrden.findIndex(j => j.id === juegoActualId);
 
       if (actualIndex <= 0) return;
       const anterior = juegosEnOrden[actualIndex - 1];
-      abrirModal(anterior.game_name, anterior.game_description, anterior.video_url, anterior.features, anterior.game_id);
+      abrirModal(anterior.game, anterior.description, anterior.video_url, anterior.features, anterior.id);
     }
 
     cargarJuegosDesdeGoogleSheet();
