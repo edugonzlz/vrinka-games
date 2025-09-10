@@ -426,14 +426,6 @@
       universoActual = universoId;
 
       const modal = document.getElementById('modal');
-      const universoLogo = document.getElementById(`universo-logo-${universoId}`);
-      if (universoLogo) {
-        const topOffset = universoLogo.getBoundingClientRect().top;
-        modal.style.paddingTop = `${topOffset}px`;
-      } else {
-        modal.style.paddingTop = '2rem'; // Un valor por defecto si no se encuentra el logo
-      }
-
       document.getElementById('modal-titulo').textContent = game;
       document.getElementById('modal-descripcion').textContent = description;
       document.getElementById('modal-video').src = convertirAEmbed(videoURL);
@@ -465,15 +457,13 @@
       }
 
       document.getElementById('modal').style.display = 'flex';
-      modal.style.display = 'flex';
     }
 
     function cerrarModal() {
       document.getElementById('modal').style.display = 'none';
-      document.getElementById('modal-video').src = '';
       const modal = document.getElementById('modal');
       modal.style.display = 'none';
-      document.getElementById('modal-video').src = ''; // Detener el video
+      document.getElementById('modal-video').src = '';
     }
 
     function mostrarSiguienteJuego() {
