@@ -110,6 +110,9 @@
       padding: 0;
       z-index: 100;
       display: none;
+      /* display: flex; ya no es necesario para centrar */
+      /* justify-content: center; */
+      /* align-items: center; */
     }
     .modal-content {
       background: #1e1e1e;
@@ -122,6 +125,11 @@
       overflow-y: auto;
       position: relative;
       font-family: 'Oxanium', sans-serif;
+      /* Forzar el centrado absoluto */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     .modal iframe {
       width: 100%;
@@ -192,6 +200,8 @@
       .modal-content {
         max-width: 700px;
         padding: 2rem 2rem 2.5rem 2rem;
+        /* En desktop, el alto no debe ser 100vh */
+        height: auto;
       }
     }
 
