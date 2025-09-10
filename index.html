@@ -349,7 +349,6 @@
           universoDiv.className = 'universo';
 
           const logo = document.createElement('img');
-          logo.id = `universo-logo-${universo.id}`; // Asignar un ID único al logo
           logo.src = universo.logo_url;
           logo.alt = universo.name;
           logo.className = 'universo-logo';
@@ -425,7 +424,6 @@
       juegosActualesUniverso = juegosCargados.filter(j => j.universeId === universoId);
       universoActual = universoId;
 
-      const modal = document.getElementById('modal');
       document.getElementById('modal-titulo').textContent = game;
       document.getElementById('modal-descripcion').textContent = description;
       document.getElementById('modal-video').src = convertirAEmbed(videoURL);
@@ -461,8 +459,6 @@
 
     function cerrarModal() {
       document.getElementById('modal').style.display = 'none';
-      const modal = document.getElementById('modal');
-      modal.style.display = 'none';
       document.getElementById('modal-video').src = '';
     }
 
