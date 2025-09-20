@@ -51,7 +51,7 @@
       max-width: 800px;
       padding: 0 1rem;
       color: #e0e0e0;
-      font-size: 1rem;
+      font-size: 24px;
       line-height: 1.5;
       box-sizing: border-box;
     }
@@ -255,6 +255,23 @@
 
     .prev-btn:hover, .next-btn:hover {
       background: #FF007F;
+    }
+  </style>
+  <style>
+    /* Estilos específicos para móvil */
+    @media screen and (max-width: 767px) {
+      #modal-titulo {
+        font-size: 24px;
+      }
+      #modal-descripcion {
+        font-size: 20px;
+      }
+      #modal-caracteristicas li {
+        font-size: 20px;
+      }
+      .prev-btn, .next-btn {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
