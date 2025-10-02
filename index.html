@@ -358,15 +358,18 @@
           features: featuresValue ? featuresValue.split('\n').map(linea => linea.trim()).filter(Boolean) : [],
         };
       });
-      
-      juegosEnOrden = juegosCargados
-          .filter(j => j.id)
-          .sort((a, b) => a.id.localeCompare(b.id));
     }
 
     async function inicializarPagina() {
       try {
         await Promise.all([cargarUniversos(), cargarJuegos()]);
+
+        // Construir la lista de navegación en el orden correcto de los universos
+        juegosEnOrden = [];
+        universosCargados.forEach(universo => {
+          const juegosDelUniverso = juegosCargados.filter(juego => juego.universeId === universo.id).sort((a, b) => a.id.localeCompare(b.id));
+          juegosEnOrden.push(...juegosDelUniverso);
+        });
 
         console.log("Universos cargados:", universosCargados);
         console.log("Juegos cargados:", juegosCargados);
@@ -515,6 +518,7 @@
       const actualIndex = juegosEnOrden.findIndex(j => j.id === juegoActualId);
 
       const siguiente = juegosEnOrden[actualIndex + 1];
+
       if (!siguiente) return; // No hay elemento DOM para pasar en navegación
       abrirModal(siguiente.game, siguiente.description, siguiente.video_url, siguiente.features, siguiente.id, null);
     }
