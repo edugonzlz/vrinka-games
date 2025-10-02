@@ -18,6 +18,11 @@
       overflow-y: hidden;
     }
     body {
+      /* Cuando el body tiene la clase 'embedded', también afectamos al html */
+      &.embedded {
+        overflow-y: hidden;
+        height: 100%; /* Aseguramos que el body ocupe toda la altura del html */
+      }
       margin: 0;
       font-family: 'Oxanium', sans-serif;
       background: #2C2C2C;
@@ -535,6 +540,9 @@
   <script>
   // Detectar si la página está embebida en un iframe
   if (window.self !== window.top) {
+    // Aplicamos la clase 'embedded' también al elemento html
+    // para tener control total sobre el overflow
+    document.documentElement.classList.add('embedded');
     document.body.classList.add('embedded');
   }
   </script>
