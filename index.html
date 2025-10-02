@@ -128,11 +128,10 @@
       height: auto; /* La altura se ajusta al contenido */
       overflow-y: auto;
       position: relative;
+      position: absolute; /* Cambiado a absolute para un posicionamiento preciso */
       font-family: 'Oxanium', sans-serif;
-      position: absolute;
-      top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
     }
     .modal iframe {
       width: 100%;
@@ -402,7 +401,7 @@
           juegosDelUniverso.forEach(j => {
             const div = document.createElement('div');
             div.className = 'juego';
-            div.onclick = () => abrirModal(j.game, j.description, j.video_url, j.features, j.id);
+            div.onclick = () => abrirModal(j.game, j.description, j.video_url, j.features, j.id, div);
 
             const placeholder = document.createElement('div');
             placeholder.className = 'juego-placeholder';
@@ -450,7 +449,7 @@
       return url;
     }
 
-    function abrirModal(game, description, videoURL, features, id) {
+    function abrirModal(game, description, videoURL, features, id, gameElement) {
       const juego = juegosCargados.find(j => j.id === id);
       const universoId = juego?.universeId;
       juegoActualId = id;
@@ -458,6 +457,20 @@
       juegoActualIndex = juegosEnOrden.findIndex(j => j.id === juegoActualId);
       juegosActualesUniverso = juegosCargados.filter(j => j.universeId === universoId);
       universoActual = universoId;
+
+      const modalContent = document.querySelector('.modal-content');
+      if (gameElement) {
+        const universoDiv = gameElement.closest('.universo');
+        const universoRect = universoDiv.getBoundingClientRect();
+
+        // El modal (.modal) es 'position: fixed', por lo que sus hijos con 'position: absolute'
+        // se posicionan relativos al viewport.
+        // Usamos la posición del universo relativa al viewport (universoRect.top).
+        // Añadimos un pequeño margen superior para que no quede pegado al borde.
+        const topPosition = Math.max(universoRect.top, 20); // 20px de margen mínimo desde arriba
+        modalContent.style.top = `${topPosition}px`;
+        modalContent.style.transform = 'translateX(-50%)'; // Mantenemos el centrado horizontal
+      }
 
       document.getElementById('modal-titulo').textContent = game;
       document.getElementById('modal-descripcion').textContent = description;
@@ -502,17 +515,17 @@
       const actualIndex = juegosEnOrden.findIndex(j => j.id === juegoActualId);
 
       const siguiente = juegosEnOrden[actualIndex + 1];
-      if (!siguiente) return;
-      abrirModal(siguiente.game, siguiente.description, siguiente.video_url, siguiente.features, siguiente.id);
+      if (!siguiente) return; // No hay elemento DOM para pasar en navegación
+      abrirModal(siguiente.game, siguiente.description, siguiente.video_url, siguiente.features, siguiente.id, null);
     }
 
     function mostrarJuegoAnterior() {
       if (!juegoActualId) return;
       const actualIndex = juegosEnOrden.findIndex(j => j.id === juegoActualId);
 
-      if (actualIndex <= 0) return;
+      if (actualIndex <= 0) return; // No hay elemento DOM para pasar en navegación
       const anterior = juegosEnOrden[actualIndex - 1];
-      abrirModal(anterior.game, anterior.description, anterior.video_url, anterior.features, anterior.id);
+      abrirModal(anterior.game, anterior.description, anterior.video_url, anterior.features, anterior.id, null);
     }
 
     inicializarPagina();
