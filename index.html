@@ -116,7 +116,7 @@
     }
     .modal-content {
       background: #1e1e1e;
-      padding: 1rem 1rem 2rem 1rem;
+      padding: 0.5rem 1rem 2rem 1rem; /* Reducido el padding superior */
       max-width: 100vw;
       width: 100vw;
       /* border-radius: 8px; */
@@ -143,6 +143,12 @@
       margin: 0.5rem 0;
       color: #FF007F;
       font-family: 'Oxanium', sans-serif;
+    }
+    #modal-universo {
+      color: #FF007F; /* Color rosa */
+      margin-top: -0.75rem; /* Reduce el espacio después del título */
+      margin-bottom: 1rem;
+      font-size: 1rem; /* Tamaño de texto normal */
     }
     .modal ul {
       padding-left: 1rem;
@@ -200,7 +206,7 @@
       }
       .modal-content {
         max-width: 700px;
-        padding: 2rem 2rem 2.5rem 2rem;
+        padding: 1rem 2rem 2.5rem 2rem; /* Reducido el padding superior */
         /* En desktop, el alto no debe ser 100vh */
         height: auto;
       }
@@ -212,7 +218,7 @@
       align-items: center;
       width: 100%;
       padding: 0;
-      margin-bottom: 1rem; /* Espacio debajo de la barra de navegación */
+      margin-bottom: 0.5rem; /* Reducido el espacio debajo de la barra */
     }
 
     .prev-btn, .next-btn {
@@ -269,6 +275,7 @@
         <button class="next-btn" onclick="mostrarSiguienteJuego()">&#x203A;</button>
       </div>
       <h2 id="modal-titulo"></h2>
+      <p id="modal-universo"></p>
       <iframe id="modal-video" src="" allowfullscreen></iframe>
       <p id="modal-descripcion"></p>
       <ul id="modal-caracteristicas"></ul>
@@ -450,6 +457,10 @@
         modalContent.style.top = `${topPosition}px`;
         modalContent.style.transform = 'translateX(-50%)'; // Mantenemos el centrado horizontal
       }
+
+      const universoDelJuego = universosCargados.find(u => u.id === universoId);
+      const nombreUniverso = universoDelJuego ? universoDelJuego.name : '';
+      document.getElementById('modal-universo').textContent = nombreUniverso;
 
       document.getElementById('modal-titulo').textContent = game;
       document.getElementById('modal-descripcion').textContent = description;
