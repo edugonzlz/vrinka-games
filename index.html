@@ -131,7 +131,7 @@
       width: 500px; /* Un ancho base razonable */
       border-radius: 8px;
       box-sizing: border-box;
-      height: 75vh;
+      max-height: 90vh;
       overflow-y: auto;
       position: relative;
       position: absolute; /* Cambiado a absolute para un posicionamiento preciso */
@@ -461,22 +461,13 @@
         const universoDiv = gameElement.closest('.universo');
         const universoRect = universoDiv.getBoundingClientRect();
 
-        // El modal (.modal) es 'position: fixed', por lo que sus hijos con 'position: absolute'
-        // se posicionan relativos al viewport.
+        // Ajustamos altura al alto del universo en pantalla
+        modalContent.style.height = `${universoRect.height}px`;
 
-        // Si el juego es del último universo, ajustamos la posición para que no se corte
-        if (universoId === lastUniverseId) {
-          // Para el último universo, alineamos el popup a la parte inferior de la ventana
-          modalContent.style.top = 'auto';
-          modalContent.style.bottom = '20px'; // 20px de margen desde abajo
-          modalContent.style.transform = 'translateX(-50%)';
-        } else {
-          // Para los demás universos, lo alineamos con la parte superior
-          modalContent.style.bottom = 'auto';
-          const topPosition = Math.max(universoRect.top, 20); // 20px de margen mínimo desde arriba
-          modalContent.style.top = `${topPosition}px`;
-          modalContent.style.transform = 'translateX(-50%)'; // Mantenemos el centrado horizontal
-        }
+        // Lo posicionamos en la parte superior del universo
+        modalContent.style.top = `${universoRect.top}px`;
+        modalContent.style.bottom = "auto";
+        modalContent.style.transform = "translateX(-50%)";
       }
 
       const universoDelJuego = universosCargados.find(u => u.id === universoId);
