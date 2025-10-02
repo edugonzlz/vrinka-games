@@ -290,6 +290,7 @@
     let universoActual = "";
     let juegoActualId = "";
     let universosCargados = [];
+    let lastUniverseId = null; // Variable para guardar el ID del último universo
 
     async function fetchData(sheetName) {
       const spreadsheetId = "1zEUwnJsfIX44E3ZyM46X6uFpehd7N052dpeTgfAFFs4";
@@ -353,6 +354,11 @@
           const juegosDelUniverso = juegosCargados.filter(juego => juego.universeId === universo.id).sort((a, b) => a.id.localeCompare(b.id));
           juegosEnOrden.push(...juegosDelUniverso);
         });
+
+        // Guardar el ID del último universo que tiene juegos
+        if (juegosEnOrden.length > 0) {
+          lastUniverseId = juegosEnOrden[juegosEnOrden.length - 1].universeId;
+        }
 
         console.log("Universos cargados:", universosCargados);
         console.log("Juegos cargados:", juegosCargados);
@@ -451,11 +457,20 @@
 
         // El modal (.modal) es 'position: fixed', por lo que sus hijos con 'position: absolute'
         // se posicionan relativos al viewport.
-        // Usamos la posición del universo relativa al viewport (universoRect.top).
-        // Añadimos un pequeño margen superior para que no quede pegado al borde.
-        const topPosition = Math.max(universoRect.top, 20); // 20px de margen mínimo desde arriba
-        modalContent.style.top = `${topPosition}px`;
-        modalContent.style.transform = 'translateX(-50%)'; // Mantenemos el centrado horizontal
+
+        // Si el juego es del último universo, ajustamos la posición para que no se corte
+        if (universoId === lastUniverseId) {
+          // Para el último universo, alineamos el popup a la parte inferior de la ventana
+          modalContent.style.top = 'auto';
+          modalContent.style.bottom = '20px'; // 20px de margen desde abajo
+          modalContent.style.transform = 'translateX(-50%)';
+        } else {
+          // Para los demás universos, lo alineamos con la parte superior
+          modalContent.style.bottom = 'auto';
+          const topPosition = Math.max(universoRect.top, 20); // 20px de margen mínimo desde arriba
+          modalContent.style.top = `${topPosition}px`;
+          modalContent.style.transform = 'translateX(-50%)'; // Mantenemos el centrado horizontal
+        }
       }
 
       const universoDelJuego = universosCargados.find(u => u.id === universoId);
