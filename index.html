@@ -18,15 +18,17 @@
       overflow-y: hidden;
     }
     body {
-      /* Cuando el body tiene la clase 'embedded', también afectamos al html */
-      &.embedded {
-        overflow-y: hidden;
-        height: 100%; /* Aseguramos que el body ocupe toda la altura del html */
-      }
       margin: 0;
       font-family: 'Oxanium', sans-serif;
       background: #2C2C2C;
       color: #fff;
+      overflow-y: auto;
+    }
+
+    html.embedded,
+    body.embedded {
+      overflow-y: hidden !important;
+      height: 100%;
     }
     /* Ocultar scrolls */
     body, .juegos-lista, .modal-content {
