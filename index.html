@@ -255,8 +255,6 @@
       color: #fff; /* Cambio de color al pasar el ratón */
     }
 
-  </style>
-  <style>
     /* Estilos específicos para móvil */
     @media screen and (max-width: 767px) {
       #modal-titulo {
@@ -280,9 +278,9 @@
   <div class="modal" id="modal">
     <div class="modal-content">
       <div class="modal-buttons">
-        <button class="prev-btn" onclick="mostrarJuegoAnterior()">&#x2039;</button>
-        <button class="close-icon" onclick="cerrarModal()">×</button>
-        <button class="next-btn" onclick="mostrarSiguienteJuego()">&#x203A;</button>
+        <button id="prev-btn" class="prev-btn">&#x2039;</button>
+        <button id="close-btn" class="close-icon">×</button>
+        <button id="next-btn" class="next-btn">&#x203A;</button>
       </div>
       <h2 id="modal-titulo"></h2>
 <p id="modal-universo"></p>
@@ -297,8 +295,12 @@
 
   <script>
     // --- CONFIGURACIÓN DE GOOGLE SHEETS ---
-    const SPREADSHEET_ID = "19zbgGBYGvafc1kflXKPzuenqQmLWWmeUwkv7vtRZAlE";
-    const API_KEY = "AIzaSyDNLmvrOtL7-bRm41jRmmHlZqhulQezShk";
+    // Coloca aquí las URLs de publicación como CSV para cada hoja.
+    // Para obtenerlas: Archivo > Compartir > Publicar en la web > Selecciona la hoja > Formato CSV > Publicar.
+    const SHEET_URLS = {
+      'universe-list': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRzRNvCSIvUAMeDPppRlpnZagjtVrtrCCWCJPVQRijteei6N0q0vCpzYQCNqu5H4JgvJDJTV1vB1iF5/pub?gid=724540651&output=csv',
+      'game-list': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRzRNvCSIvUAMeDPppRlpnZagjtVrtrCCWCJPVQRijteei6N0q0vCpzYQCNqu5H4JgvJDJTV1vB1iF5/pub?gid=619167243&output=csv'
+    };
     // ------------------------------------
 
     let juegosCargados = [];
@@ -311,27 +313,95 @@
     let lastUniverseId = null; // Variable para guardar el ID del último universo
 
     async function fetchData(sheetName) {
-      const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${sheetName}?key=${API_KEY}`;
-      const res = await fetch(url);
-      if (!res.ok) {
-        throw new Error(`Error fetching sheet ${sheetName}: ${res.statusText}`);
+      let url = SHEET_URLS[sheetName];
+      if (!url) {
+        throw new Error(`No se encontró URL para la hoja: ${sheetName}`);
       }
-      const data = await res.json();
-      // Limpiamos los encabezados para eliminar espacios en blanco accidentales
-      const [rawHeaders, ...rows] = data.values;
-      const headers = rawHeaders.map(h => h.trim());
-      return { headers, rows };
+
+      // Añadimos un parámetro "cache buster" para forzar al navegador a ignorar
+      // respuestas de error cacheadas y solicitar los datos de nuevo.
+      const urlWithCacheBuster = `${url}&t=${new Date().getTime()}`;
+      const res = await fetch(urlWithCacheBuster);
+
+      if (!res.ok) {
+        throw new Error(`Error al cargar la hoja ${sheetName}: ${res.statusText}`);
+      }
+      const csvText = await res.text();
+
+      // --- NUEVO PARSER DE CSV ---
+      // Este parser es más robusto y maneja correctamente los saltos de línea dentro de las celdas.
+      const parseCsv = (text) => {
+        if (!text) {
+          return { headers: [], rows: [] };
+        }
+
+        const rows = [];
+        let currentRow = [];
+        let currentField = '';
+        let inQuotes = false;
+
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+
+          if (inQuotes) {
+            if (char === '"') {
+              if (i + 1 < text.length && text[i + 1] === '"') { // Es una comilla escapada ""
+                currentField += '"';
+                i++; // Saltamos la siguiente comilla
+              } else {
+                inQuotes = false;
+              }
+            } else {
+              currentField += char;
+            }
+          } else {
+            if (char === '"') {
+              inQuotes = true;
+            } else if (char === ',') {
+              currentRow.push(currentField.trim());
+              currentField = '';
+            } else if (char === '\n' || char === '\r') {
+              if (i > 0 && text[i-1] !== '\r' && text[i-1] !== '\n') { // Fin de la fila
+                currentRow.push(currentField.trim());
+                rows.push(currentRow);
+                currentRow = [];
+                currentField = '';
+              }
+            } else {
+              currentField += char;
+            }
+          }
+        }
+        // Añadir la última fila si existe
+        if (currentRow.length > 0 || currentField) {
+            currentRow.push(currentField.trim()); // Asegura que el último campo se añada
+            rows.push(currentRow);
+        }
+        
+        if (rows.length === 0) return { headers: [], rows: [] };
+
+        const headers = rows[0];
+        const dataRows = rows.slice(1);
+
+        return { headers, rows: dataRows };
+      };
+
+      return parseCsv(csvText);
     }
 
     async function cargarUniversos() {
       const { headers, rows } = await fetchData("universe-list");
       universosCargados = rows.map(row => {
-        const universo = {};
-        headers.forEach((key, i) => {
-          // Las columnas son: id, name, logo_file, description, logo_url
-          universo[key] = (row[i] || "").trim();
+        const rowData = {};
+        headers.forEach((header, i) => {
+          rowData[header] = row[i] || "";
         });
-        return universo;
+        return {
+          id: (rowData.id || "").trim(),
+          name: (rowData.name || "").trim(),
+          logo_url: (rowData.logo_url || "").trim(),
+          description: (rowData.description || "").trim(),
+        };
       });
     }
 
@@ -408,7 +478,7 @@
             const div = document.createElement('div');
             div.className = 'juego';
             div.onclick = () => abrirModal(j.game, j.description, j.video_url, j.features, j.id, div);
-
+          
             const placeholder = document.createElement('div');
             placeholder.className = 'juego-placeholder';
             placeholder.textContent = j.game;
@@ -542,6 +612,12 @@
       }
     });
 </script>
+  <script>
+    // Centralizar los manejadores de eventos del modal
+    document.getElementById('prev-btn').addEventListener('click', mostrarJuegoAnterior);
+    document.getElementById('next-btn').addEventListener('click', mostrarSiguienteJuego);
+    document.getElementById('close-btn').addEventListener('click', cerrarModal);
+  </script>
   <script>
   // Detectar si la página está embebida en un iframe
   if (window.self !== window.top) {
