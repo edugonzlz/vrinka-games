@@ -41,20 +41,19 @@
       display: none; /* Chrome, Safari y Opera */
     }
     .universo {
-      padding: 2rem 1rem; /* Añadido padding horizontal */
+      padding: 0 1rem 1.5rem 1rem; /* Reducido padding vertical */
       overflow-x: hidden; /* Evita el scroll horizontal de la página */
       box-sizing: border-box;
     }
     .universo-logo {
-      width: auto;
-      max-height: 180px; /* 80% más grande */
-      max-width: 100%; /* Evita que el logo se desborde */
-      margin: 0 auto 1rem; /* Espacio entre logo y descripción */
+      width: 245px; /* Mismo ancho que el juego en móvil */
+      height: auto; /* Para mantener la proporción */
+      margin: 0 0 0 0; /* Eliminado margen inferior */
       display: block;
     }
     .universo-descripcion {
-      text-align: center;
-      margin: 0 auto 1.5rem;
+      text-align: left; /* Alineado a la izquierda */
+      margin: 0 0 1.5rem 0; /* Alineado a la izquierda */
       max-width: 800px;
       padding: 0 1rem;
       color: #e0e0e0;
@@ -206,12 +205,12 @@
 
     @media screen and (min-width: 768px) {
       .universo {
-        padding: 3rem 2rem; /* Añadido padding horizontal */
+        padding: 0 2rem 2rem 2rem; /* Reducido padding vertical */
       }
       .universo-logo {
-        width: auto;
-        max-height: 214px; /* 15% más pequeño que antes */
-        margin-bottom: 2rem;
+        width: 300px; /* Mismo ancho que el juego en desktop */
+        height: auto; /* Para mantener la proporción */
+        margin-bottom: 0; /* Eliminado margen inferior */
       }
       .juego {
         width: 300px;
@@ -265,11 +264,6 @@
       }
       #modal-caracteristicas li {
         font-size: 20px;
-      }
-      .universo-descripcion {
-        text-align: left;
-        padding-left: 0;
-        padding-right: 0;
       }
     }
   </style>
@@ -402,12 +396,7 @@
           logo.className = 'universo-logo';
           universoDiv.appendChild(logo);
 
-          if (universo.description) {
-            const descripcion = document.createElement('p');
-            descripcion.className = 'universo-descripcion';
-            descripcion.textContent = universo.description;
-            universoDiv.appendChild(descripcion);
-          }
+          // La descripción del universo ya no se muestra por petición.
 
           const lista = document.createElement('div');
           lista.className = 'juegos-lista';
@@ -478,12 +467,18 @@
         const universoRect = universoDiv.getBoundingClientRect();
 
         // Ajustamos altura al alto del universo en pantalla
-        modalContent.style.height = `${universoRect.height}px`;
+        modalContent.style.height = `${universoRect.height * 1.5}px`;
 
-        // Lo posicionamos en la parte superior del universo
-        modalContent.style.top = `${universoRect.top}px`;
-        modalContent.style.bottom = "auto";
+        // Si es el último universo, alinear con el borde inferior. Si no, con el superior.
+        if (universoId === lastUniverseId) {
+          modalContent.style.bottom = `${window.innerHeight - universoRect.bottom}px`;
+          modalContent.style.top = 'auto';
+        } else {
+          modalContent.style.top = `${universoRect.top}px`;
+          modalContent.style.bottom = 'auto';
+        }
         modalContent.style.transform = "translateX(-50%)";
+
       }
 
       const universoDelJuego = universosCargados.find(u => u.id === universoId);
