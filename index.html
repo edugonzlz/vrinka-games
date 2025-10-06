@@ -370,7 +370,7 @@
         // Construir la lista de navegación en el orden correcto de los universos
         juegosEnOrden = [];
         universosCargados.forEach(universo => {
-          const juegosDelUniverso = juegosCargados.filter(juego => juego.universeId === universo.id).sort((a, b) => a.id.localeCompare(b.id));
+          const juegosDelUniverso = juegosCargados.filter(juego => juego.universeId === universo.id);
           juegosEnOrden.push(...juegosDelUniverso);
         });
 
