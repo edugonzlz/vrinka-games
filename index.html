@@ -300,8 +300,8 @@
 
   <script>
     // --- CONFIGURACIÓN DE GOOGLE SHEETS ---
-    const SPREADSHEET_ID = "1zEUwnJsfIX44E3ZyM46X6uFpehd7N052dpeTgfAFFs4";
-    const API_KEY = "AIzaSyD3wNY7TWoYhkgkXgyxJG2cpBHo80Uv8ik";
+    const SPREADSHEET_ID = "19zbgGBYGvafc1kflXKPzuenqQmLWWmeUwkv7vtRZAlE";
+    const API_KEY = "AIzaSyDNLmvrOtL7-bRm41jRmmHlZqhulQezShk";
     // ------------------------------------
 
     let juegosCargados = [];
@@ -341,7 +341,7 @@
     async function cargarJuegos() {
       const { headers, rows } = await fetchData("game-list");
 
-      juegosCargados = rows.map(row => {
+      const allGames = rows.map(row => {
         // Create an intermediate object mapping headers to row values for easier access.
         const rowData = {};
         headers.forEach((header, i) => {
@@ -361,6 +361,9 @@
           features: featuresValue ? featuresValue.split('\n').map(linea => linea.trim()).filter(Boolean) : [],
         };
       });
+
+      // Filtrar juegos que no tienen un ID
+      juegosCargados = allGames.filter(juego => juego.id);
     }
 
     async function inicializarPagina() {
