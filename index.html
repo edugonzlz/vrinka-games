@@ -299,6 +299,11 @@
   </div>
 
   <script>
+    // --- CONFIGURACIÓN DE GOOGLE SHEETS ---
+    const SPREADSHEET_ID = "1zEUwnJsfIX44E3ZyM46X6uFpehd7N052dpeTgfAFFs4";
+    const API_KEY = "AIzaSyD3wNY7TWoYhkgkXgyxJG2cpBHo80Uv8ik";
+    // ------------------------------------
+
     let juegosCargados = [];
     let juegoActualIndex = -1;
     let juegosEnOrden = []; // Lista ordenada para navegación
@@ -309,9 +314,7 @@
     let lastUniverseId = null; // Variable para guardar el ID del último universo
 
     async function fetchData(sheetName) {
-      const spreadsheetId = "1zEUwnJsfIX44E3ZyM46X6uFpehd7N052dpeTgfAFFs4";
-      const apiKey = "AIzaSyD3wNY7TWoYhkgkXgyxJG2cpBHo80Uv8ik";
-      const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+      const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${sheetName}?key=${API_KEY}`;
       const res = await fetch(url);
       if (!res.ok) {
         throw new Error(`Error fetching sheet ${sheetName}: ${res.statusText}`);
