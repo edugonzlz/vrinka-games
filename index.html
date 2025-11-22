@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Universos VR</title>
   <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    html,
+    body {
       height: 100%;
     }
 
@@ -17,6 +19,7 @@
     body.embedded {
       overflow-y: hidden;
     }
+
     body {
       margin: 0;
       font-family: 'Oxanium', sans-serif;
@@ -30,30 +33,47 @@
       overflow-y: hidden !important;
       height: 100%;
     }
+
     /* Ocultar scrolls */
-    body, .juegos-lista, .modal-content {
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE 10+ */
+    body,
+    .juegos-lista,
+    .modal-content {
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* IE 10+ */
     }
+
     body::-webkit-scrollbar,
     .juegos-lista::-webkit-scrollbar,
     .modal-content::-webkit-scrollbar {
-      display: none; /* Chrome, Safari y Opera */
+      display: none;
+      /* Chrome, Safari y Opera */
     }
+
     .universo {
-      padding: 0 1rem 1.5rem 1rem; /* Reducido padding vertical */
-      overflow-x: hidden; /* Evita el scroll horizontal de la página */
+      padding: 0 1rem 1.5rem 1rem;
+      /* Reducido padding vertical */
+      overflow-x: hidden;
+      /* Evita el scroll horizontal de la página */
       box-sizing: border-box;
     }
+
     .universo-logo {
-      width: 245px; /* Mismo ancho que el juego en móvil */
-      height: auto; /* Para mantener la proporción */
-      margin: 0 0 0 -0.7rem; /* Margen negativo para pegarlo a la izquierda */
+      width: 245px;
+      /* Mismo ancho que el juego en móvil */
+      height: auto;
+      /* Para mantener la proporción */
+      margin: 0 0 0 -0.7rem;
+      /* Margen negativo para pegarlo a la izquierda */
       display: block;
     }
+
     .universo-descripcion {
-      text-align: left; /* Alineado a la izquierda */
-      margin: 0 0 1.5rem 0; /* Alineado a la izquierda */
+      text-align: left;
+      /* Alineado a la izquierda */
+      margin: 0 0 1.5rem 0;
+      /* Alineado a la izquierda */
       max-width: 800px;
       padding: 0 1rem;
       color: #e0e0e0;
@@ -61,6 +81,7 @@
       line-height: 1.5;
       box-sizing: border-box;
     }
+
     .juegos-lista {
       display: flex;
       overflow-x: auto;
@@ -68,6 +89,7 @@
       padding: 0;
       margin: 0;
     }
+
     .juego {
       flex: 0 0 auto;
       width: 245px;
@@ -80,6 +102,7 @@
       position: relative;
       height: 245px;
     }
+
     .juego-placeholder {
       position: absolute;
       top: 50%;
@@ -92,6 +115,7 @@
       pointer-events: none;
       box-sizing: border-box;
     }
+
     .juego img {
       position: absolute;
       top: 0;
@@ -101,7 +125,37 @@
       object-fit: cover;
       display: block;
       transition: opacity 0.3s ease-in-out;
+      font-family: 'Oxanium', sans-serif;
     }
+
+    .game-status-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem 0;
+      font-weight: bold;
+      font-size: 1.2rem;
+      z-index: 10;
+      pointer-events: none;
+      font-family: 'Oxanium', sans-serif;
+      color: #000;
+      /* Texto negro para mejor contraste en colores vibrantes */
+    }
+
+    .status-novedad {
+      background: #00E676;
+      /* Verde vibrante */
+      color: #000;
+    }
+
+    .status-proximamente {
+      background: #FFEA00;
+      /* Amarillo vibrante */
+      color: #000;
+    }
+
     /* Modal */
     .modal {
       position: fixed;
@@ -120,54 +174,72 @@
       /* justify-content: center; */
       /* align-items: center; */
     }
+
     .modal-content {
       background: #1e1e1e;
-      padding: 0.25rem 1rem 2rem 1rem; /* Reducido aún más el padding superior */
+      padding: 0.25rem 1rem 2rem 1rem;
+      /* Reducido aún más el padding superior */
       max-width: 100vw;
       width: 100vw;
       /* border-radius: 8px; */
-      max-width: 95vw; /* Ancho máximo para dejar un pequeño margen */
-      width: 500px; /* Un ancho base razonable */
+      max-width: 95vw;
+      /* Ancho máximo para dejar un pequeño margen */
+      width: 500px;
+      /* Un ancho base razonable */
       border-radius: 8px;
       box-sizing: border-box;
-        max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
       position: relative;
-      position: absolute; /* Cambiado a absolute para un posicionamiento preciso */
+      position: absolute;
+      /* Cambiado a absolute para un posicionamiento preciso */
       font-family: 'Oxanium', sans-serif;
       left: 50%;
       transform: translateX(-50%);
     }
+
     .modal-body {
-  flex: 1;
-  overflow-y: auto;
-  padding-right: 0.5rem; /* evita que el scroll tape el texto */
-}
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      /* evita que el scroll tape el texto */
+    }
+
     .modal iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
       border: none;
       margin-bottom: 1rem;
     }
+
     .modal h2 {
-      margin: 0 0 0.5rem; /* Eliminado el margen superior */
+      margin: 0 0 0.5rem;
+      /* Eliminado el margen superior */
       color: #FF007F;
       font-family: 'Oxanium', sans-serif;
     }
+
     #modal-universo {
-      color: #FF007F; /* Color rosa */
-      margin-top: -0.75rem; /* Reduce el espacio después del título */
-      margin-bottom: 0.5rem; /* Reducido a la mitad */
-      font-size: 1rem; /* Tamaño de texto normal */
+      color: #FF007F;
+      /* Color rosa */
+      margin-top: -0.75rem;
+      /* Reduce el espacio después del título */
+      margin-bottom: 0.5rem;
+      /* Reducido a la mitad */
+      font-size: 1rem;
+      /* Tamaño de texto normal */
     }
+
     .modal ul {
       padding-left: 1rem;
     }
+
     .modal ul li {
       font-family: 'Oxanium', sans-serif;
     }
+
     .close-btn {
       display: block;
       margin: 2rem auto 1rem auto;
@@ -181,16 +253,21 @@
       min-width: 120px;
       font-family: 'Oxanium', sans-serif;
     }
+
     .modal p {
       font-family: 'Oxanium', sans-serif;
     }
+
     #modal-descripcion {
-      white-space: pre-wrap; /* Respeta los saltos de línea y espacios */
+      white-space: pre-wrap;
+      /* Respeta los saltos de línea y espacios */
     }
 
-    .modal-content > *:not(.close-btn):not(.close-icon) {
-      margin-bottom: 0.5rem; /* Reducido a la mitad */
+    .modal-content>*:not(.close-btn):not(.close-icon) {
+      margin-bottom: 0.5rem;
+      /* Reducido a la mitad */
     }
+
     .close-icon {
       background: none;
       border: none;
@@ -200,59 +277,78 @@
       font-family: 'Oxanium', sans-serif;
       line-height: 1;
       padding: 0;
-      width: 60px; /* Ancho fijo para centrar correctamente */
+      width: 60px;
+      /* Ancho fijo para centrar correctamente */
     }
+
     .close-icon:hover {
       color: #FF007F;
     }
 
     @media screen and (min-width: 768px) {
       .universo {
-        padding: 0 2rem 2rem 2rem; /* Reducido padding vertical */
+        padding: 0 2rem 2rem 2rem;
+        /* Reducido padding vertical */
       }
+
       .universo-logo {
-        width: 300px; /* Mismo ancho que el juego en desktop */
-        height: auto; /* Para mantener la proporción */
-        margin: 0 0 0 -0.8rem; /* Margen negativo para pegarlo a la izquierda */
+        width: 300px;
+        /* Mismo ancho que el juego en desktop */
+        height: auto;
+        /* Para mantener la proporción */
+        margin: 0 0 0 -0.8rem;
+        /* Margen negativo para pegarlo a la izquierda */
       }
+
       .juego {
         width: 300px;
         height: 300px;
       }
+
       .modal-content {
         max-width: 700px;
-        padding: 0.5rem 2rem 2.5rem 2rem; /* Reducido aún más el padding superior */
+        padding: 0.5rem 2rem 2.5rem 2rem;
+        /* Reducido aún más el padding superior */
         /* En desktop, el alto no debe ser 100vh */
       }
     }
 
     .modal-buttons {
       display: flex;
-      justify-content: space-between; /* Centra la X y pone las flechas en los extremos */
+      justify-content: space-between;
+      /* Centra la X y pone las flechas en los extremos */
       align-items: center;
       width: 100%;
       padding: 0;
-      margin-bottom: 0 !important; /* Forzar la anulación de la regla genérica */
+      margin-bottom: 0 !important;
+      /* Forzar la anulación de la regla genérica */
     }
 
-    .prev-btn, .next-btn {
+    .prev-btn,
+    .next-btn {
       margin: 0;
       background: none;
       border: none;
-      color: #FF007F; /* Color rosa */
-      padding: 0; /* Aseguramos que no haya padding interno */
+      color: #FF007F;
+      /* Color rosa */
+      padding: 0;
+      /* Aseguramos que no haya padding interno */
       border-radius: 5px;
       cursor: pointer;
-      font-size: 4rem; /* Tamaño de la flecha */
+      font-size: 4rem;
+      /* Tamaño de la flecha */
       font-family: 'Oxanium', sans-serif;
       height: 60px;
       box-sizing: border-box;
       line-height: 1;
-      width: 60px; /* Ancho fijo para espaciado y alineación */
+      width: 60px;
+      /* Ancho fijo para espaciado y alineación */
     }
 
-    .prev-btn:hover, .next-btn:hover {
-      color: #fff; /* Cambio de color al pasar el ratón */
+    .prev-btn:hover,
+    .next-btn:hover {
+      color: #fff;
+      /* Cambio de color al pasar el ratón */
     }
 
     /* Estilos específicos para móvil */
@@ -260,15 +356,18 @@
       #modal-titulo {
         font-size: 24px;
       }
+
       #modal-descripcion {
         font-size: 20px;
       }
+
       #modal-caracteristicas li {
         font-size: 20px;
       }
     }
   </style>
 </head>
+
 <body>
 
   <div id="loader" style="text-align: center; padding: 2rem; font-size: 1.2rem;">
@@ -283,13 +382,13 @@
         <button id="next-btn" class="next-btn">&#x203A;</button>
       </div>
       <h2 id="modal-titulo"></h2>
-<p id="modal-universo"></p>
-<iframe id="modal-video" src="" allowfullscreen></iframe>
+      <p id="modal-universo"></p>
+      <iframe id="modal-video" src="" allowfullscreen></iframe>
 
-<div class="modal-body">
-  <p id="modal-descripcion"></p>
-  <ul id="modal-caracteristicas"></ul>
-</div>
+      <div class="modal-body">
+        <p id="modal-descripcion"></p>
+        <ul id="modal-caracteristicas"></ul>
+      </div>
     </div>
   </div>
 
@@ -361,7 +460,7 @@
               currentRow.push(currentField.trim());
               currentField = '';
             } else if (char === '\n' || char === '\r') {
-              if (i > 0 && text[i-1] !== '\r' && text[i-1] !== '\n') { // Fin de la fila
+              if (i > 0 && text[i - 1] !== '\r' && text[i - 1] !== '\n') { // Fin de la fila
                 currentRow.push(currentField.trim());
                 rows.push(currentRow);
                 currentRow = [];
@@ -374,10 +473,10 @@
         }
         // Añadir la última fila si existe
         if (currentRow.length > 0 || currentField) {
-            currentRow.push(currentField.trim()); // Asegura que el último campo se añada
-            rows.push(currentRow);
+          currentRow.push(currentField.trim()); // Asegura que el último campo se añada
+          rows.push(currentRow);
         }
-        
+
         if (rows.length === 0) return { headers: [], rows: [] };
 
         const headers = rows[0];
@@ -415,6 +514,11 @@
           rowData[header] = row[i] || "";
         });
 
+        if (rows.indexOf(row) === 0) {
+          // console.log("DEBUG - Headers found:", headers);
+          // console.log("DEBUG - Row 0 raw data:", rowData);
+        }
+
         // Explicitly map the sheet columns to the properties our script uses.
         // This is more robust than a dynamic mapping loop.
         const featuresValue = (rowData.features || "").trim();
@@ -426,11 +530,12 @@
           video_url: (rowData.video_url || "").trim(),
           cover_url: (rowData.cover_url || "").trim(),
           features: featuresValue ? featuresValue.split('\n').map(linea => linea.trim()).filter(Boolean) : [],
+          state: (rowData.state || "").trim().toLowerCase(),
         };
       });
 
-      // Filtrar juegos que no tienen un ID
-      juegosCargados = allGames.filter(juego => juego.id);
+      // Filtrar juegos que tienen portada. Es el requisito principal para mostrarse.
+      juegosCargados = allGames.filter(juego => juego.cover_url);
     }
 
     async function inicializarPagina() {
@@ -440,7 +545,12 @@
         // Construir la lista de navegación en el orden correcto de los universos
         juegosEnOrden = [];
         universosCargados.forEach(universo => {
-          const juegosDelUniverso = juegosCargados.filter(juego => juego.universeId === universo.id);
+          // Solo incluimos en la navegación los juegos que tienen ID y NO son "proximamente"
+          const juegosDelUniverso = juegosCargados.filter(juego =>
+            juego.universeId === universo.id &&
+            juego.id &&
+            juego.state !== 'proximamente'
+          );
           juegosEnOrden.push(...juegosDelUniverso);
         });
 
@@ -451,7 +561,7 @@
 
         console.log("Universos cargados:", universosCargados);
         console.log("Juegos cargados:", juegosCargados);
-        
+
         const universosContainer = document.body;
         let contentRendered = false;
 
@@ -477,8 +587,34 @@
           juegosDelUniverso.forEach(j => {
             const div = document.createElement('div');
             div.className = 'juego';
-            div.onclick = () => abrirModal(j.game, j.description, j.video_url, j.features, j.id, div);
-          
+
+            // Lógica de estado
+            let labelText = '';
+            let labelClass = '';
+            let isClickable = true;
+
+            if (j.state === 'novedad') {
+              labelText = 'NOVEDAD';
+              labelClass = 'status-novedad';
+            } else if (j.state === 'proximamente') {
+              labelText = 'PRÓXIMAMENTE';
+              labelClass = 'status-proximamente';
+              isClickable = false;
+            }
+
+            if (isClickable && j.id) {
+              div.onclick = () => abrirModal(j.game, j.description, j.video_url, j.features, j.id, div);
+            } else {
+              div.style.cursor = 'default';
+            }
+
+            if (labelText) {
+              const label = document.createElement('div');
+              label.className = `game-status-label ${labelClass}`;
+              label.textContent = labelText;
+              div.appendChild(label);
+            }
+
             const placeholder = document.createElement('div');
             placeholder.className = 'juego-placeholder';
             placeholder.textContent = j.game;
@@ -611,7 +747,7 @@
         cerrarModal();
       }
     });
-</script>
+  </script>
   <script>
     // Centralizar los manejadores de eventos del modal
     document.getElementById('prev-btn').addEventListener('click', mostrarJuegoAnterior);
@@ -619,13 +755,14 @@
     document.getElementById('close-btn').addEventListener('click', cerrarModal);
   </script>
   <script>
-  // Detectar si la página está embebida en un iframe
-  if (window.self !== window.top) {
-    // Aplicamos la clase 'embedded' también al elemento html
-    // para tener control total sobre el overflow
-    document.documentElement.classList.add('embedded');
-    document.body.classList.add('embedded');
-  }
+    // Detectar si la página está embebida en un iframe
+    if (window.self !== window.top) {
+      // Aplicamos la clase 'embedded' también al elemento html
+      // para tener control total sobre el overflow
+      document.documentElement.classList.add('embedded');
+      document.body.classList.add('embedded');
+    }
   </script>
 </body>
+
 </html>
