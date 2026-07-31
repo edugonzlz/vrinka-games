@@ -1,0 +1,274 @@
+{
+  "colecciones": [
+    {
+      "id": "PLAY",
+      "name": "VRINKA PLAY",
+      "logo_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785490613/vrinka_play_lwtlml.png",
+      "description": "Experiencias para todos los gustos, desde los 6 años, acierto seguro. Juegos cortos, combates con zombis, torneos futuristas y mundos mágicos.",
+      "visible": true,
+      "juegos": [
+        {
+          "id": "J0008",
+          "name": "Dead Ahead",
+          "description_web": "¿Tienes lo que se necesita para sobrevivir al apocalipsis?\n\n¡El apocalipsis ha llegado! \nTú y tus amigos haréis una última defensa contra los no-muertos. Tendréis 30 segundos para preparar vuestras defensas y elegir vuestras armas antes de que los zombis ataquen. Con cada oleada, los zombis se vuelven más rápidos y la presión aumenta. ¿Tienes lo que hace falta para sobrevivir al apocalipsis?",
+          "video_url": "https://www.youtube.com/watch?v=ArbOQp6h4So",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483657/Dead_Ahead_mxbaja.png",
+          "features_web": "Disparar a zombis nunca fue tan divertido.\nAcción trepidante para los más atrevidos.\nRepara tus barricadas y ¡Sobrevive!.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0032",
+          "name": "Terminator Uprising",
+          "description_web": "¡ESTRENO MUNDIAL!\n\nÚnete a la resistencia y lucha por la supervivencia de la humanidad en Terminator: Uprising.\n\nAmbientado en el año 2029, después de los eventos del Día del Juicio Final, lucha junto a la resistencia liderada por John Connor mientras se alzan para derrotar a Skynet de una vez por todas.\n\nDefiéndete de hordas de letales T-800, enfréntate a los temibles Hunter-Killers y derriba a la amenaza robótica para salvar a la humanidad.\n\n¿Tienes lo que se necesita para salvar a la humanidad? ¿O serás aplastado bajo las implacables fuerzas de Skynet?\n\n¡Únete a la lucha!",
+          "video_url": "https://youtu.be/j9PvZ0QKcJ4",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483682/Terminator_Uprising_hpc49v.png",
+          "features_web": "Lucha por la supervivencia humana.\nSe ambienta en el año 2029, tras el Día del Juicio Final.\nÚnete a la resistencia de John Connor para derrotar a Skynet.\nEnfréntate a hordas de T-800 y a los Hunter-Killers.\nDe 1 a 10 jugadores\n15 minutos",
+          "state": "novedad"
+        },
+        {
+          "id": "J0060",
+          "name": "Versus",
+          "description_web": "Laser Tag - Shooter PvP\n\nVersus es un juego de laser tag en realidad virtual retrofuturista. Prepárate para épicas batallas en equipo con tu bláster V99 y tu escudo en este juego de disparos en primera persona lleno de acción.\n\nAdéntrate en una arena de laser tag en realidad virtual retrofuturista, diseñada para una acción competitiva trepidante.",
+          "video_url": "",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483685/Versus_bo1klc.png",
+          "features_web": "Batallas PvP de hasta 8 jugadores\nModos Batalla por equipos y Todos contra todos\nModos competitivos Clásico y Pro\n6 mapas únicos para cada tamaño de arena\nUsa el bláster V99 y el escudo de energía\nCarga tu escudo para desatar un Megadisparo devastador",
+          "state": "proximamente"
+        },
+        {
+          "id": "J0061",
+          "name": "Space Dance Harmony",
+          "description_web": "Baile y ritmo\n\nReplica las coreografías en espejo con todo tu cuerpo para ganar puntos.\n\n¡Muévete al ritmo de la música para llegar a lo más alto de la clasificación y brillar en la pista de baile!",
+          "video_url": "",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483678/Space_Dance_Harmony_c8nbai.png",
+          "features_web": "Replica las coreografías en espejo con todo tu cuerpo para ganar puntos\nMuévete al ritmo de la música para llegar a lo más alto de la clasificación y brillar en la pista de baile",
+          "state": "proximamente"
+        },
+        {
+          "id": "J0063",
+          "name": "Arrowsong: Dark Omen",
+          "description_web": "Los demonios han invadido el pueblo y han corrompido a sus habitantes. Ahora vagan por las calles, sembrando la muerte y la destrucción. ¿Te alzarás para detenerlos y salvar el mundo?",
+          "video_url": "",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483653/Arrowsong-_Dark_Omen_tvb3od.png",
+          "features_web": "Nuevos personajes, enemigos y mecánicas de juego\nMúltiples ubicaciones a lo largo de una oscura campaña centrada en la historia\nAcción cinematográfica y encuentros emocionantes\nUna aventura épica para evitar el fin del mundo",
+          "state": "proximamente"
+        },
+        {
+          "id": "J0020",
+          "name": "Monkey Madness",
+          "description_web": "¡VERSIÓN NAVIDEÑA!\n\nMonkey Madness: Juegos de la Selva es un divertido juego de fiesta donde competís para ganarse el favor del Gran Emperador Mono. \nEnfréntate hasta en 25 emocionantes desafíos de la selva que pondrán a prueba tu habilidad, ritmo, reflejos e incluso tu suerte.\nExplota globos, esquiva paredes, escala lianas, machaca clavos, sigue el ritmo en el juego de bongos, o lanza fruta con puntería perfecta. \n\nCada juego trae consigo nuevo caos y risas. Elige tus juegos favoritos o deja que la selva decida tu destino.\nRápido, divertido y ferozmente competitivo, ¡Monkey Madness: Juegos de la Selva es el enfrentamiento de RV definitivo donde solo uno puede convertirse en el campeón del emperador!",
+          "video_url": "https://www.youtube.com/watch?v=KCjXgfNrLy4",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483667/Monkey_Madness_rdl5wl.jpg",
+          "features_web": "Selección sobre 25 minijuegos.\nHazte una foto de grupo final.\nDe 2 a 10 jugadores.\nDe 10 a 20 minutos.",
+          "state": "novedad"
+        },
+        {
+          "id": "J0002",
+          "name": "Arrowsong",
+          "description_web": "¿Podrás traer la paz al reino de las hadas?\n\n¡Orcos, goblins y un amenazante dragón están decididos a destruir el árbol sagrado! Tú y tu grupo de héroes han sido convocados para detener este mal y devolver la paz al reino de las hadas. ¡Una misión peligrosa que podría superar incluso al aventurero más experimentado!",
+          "video_url": "https://youtu.be/aAy0dgkn5GI",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483652/Arrowsong_kmmvr9.png",
+          "features_web": "Juego de tiro con arco apto para toda la familia.\nUna aventura cooperativa en un mundo de fantasía.\nDestruye al ejército de orcos.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0023",
+          "name": "Plush Rush",
+          "description_web": "¡VERSIÓN NAVIDEÑA!\n\nPlush Rush combina risas con estrategia y lleva a tu equipo a un mundo de juguetes a gran escala.\n\nPlush Rush es la aventura definitiva de defensa de torres en VR, apta para toda la familia. Redúcete al tamaño de un juguete, forma equipo con tu grupo y protege el tarro de caramelos de oleadas de enemigos traviesos. Fácil de aprender, increíblemente divertida y perfecta para grupos.",
+          "video_url": "https://www.youtube.com/watch?v=tc8Kh9HbhHE",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483671/Plush_Rush_llsz4o.png",
+          "features_web": "Defensa de torres colaborativa.\nEres un pequeño peluche adorable.\nY tienes que defenderte de juguetes rebeldes que atacan.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0006",
+          "name": "Cybershock",
+          "description_web": "Un shooter futurista de ritmo vertiginoso.\n\nTú y tu escuadrón de heroicos guerreros digitales intentáis erradicar el virus que ha tomado el control de vuestro sistema. Un shooter futurista de ritmo rápido con elementos de juego dinámicos. Esquiva láseres, balas, cortafuegos, todo mientras intentas destruir al enemigo con tus pistolas láser de doble empuñadura.",
+          "video_url": "https://www.youtube.com/watch?v=QGCNRYpfJdk",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483655/Cybershock_kx0ejm.png",
+          "features_web": "Shooter arcade retro.\n¡Esquiva, dispara, destruye!\nPon a prueba tus reflejos.\n¡Compite por la mejor puntuación!\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0005",
+          "name": "Cops vs Robbers",
+          "description_web": "¡Detén el robo o únete a él!\n\nCops vs Robbers es un shooter PvP lleno de acción.\nLa caja fuerte ha sido abierta y el robo está en marcha. Únete al caos como Policía o Ladrón y enfréntate en un tiroteo dentro de un banco. Disfruta de combates intensos con total libertad de movimiento en este shooter de realidad virtual basado en ubicaciones.",
+          "video_url": "https://www.youtube.com/watch?v=U_TOsZrHxHI",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483655/Cops_vs_Robbers_eli85n.png",
+          "features_web": "Juego competitivo de disparos.\nPolicías contra ladrones.\nPasadizos estrechos, vidrios que se rompen en un entorno interactivo.\nDe 2 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0004",
+          "name": "Cookdup",
+          "description_web": "¡Bienvenido a Cook’d-Up!\nUn juego familiar y de trabajo en equipo. Entra en una cocina virtual donde tú y tus compañeros chefs os enfrentaréis al reto de atender a un montón de clientes hambrientos. Asigna tareas, colabora y prepara tantas hamburguesas como físicamente puedas. A medida que progreséis, las recetas serán más complicadas y se necesitará un trabajo en equipo intensivo para mantener a los clientes satisfechos.",
+          "video_url": "https://www.youtube.com/watch?v=EPgyX_xEeRo",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483652/Cookdup_jhes1q.jpg",
+          "features_web": "Juego de cocina para toda la familia.\nCocina hamburguesas y mantén a los clientes felices.\nY lanza ketchup a tus compañeros chefs…\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0035",
+          "name": "Wizard Academy",
+          "description_web": "Bienvenidos a Wizard Academy, donde tú y tus amigos os ponéis la túnica de aprendices de mago y competís contra el tiempo para completar vuestro examen mágico final.\n\nEn este divertido juego cooperativo de puzles, cada uno deberá superar una serie de tareas místicas, lanzar hechizos, recolectar artefactos y descubrir secretos para demostrar su habilidad antes de que se acabe el tiempo.",
+          "video_url": "https://www.youtube.com/watch?v=OR-m32WVGN4",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483686/Wizard_Academy_jk2klj.jpg",
+          "features_web": "Juego familiar de magia.\nPasa el exámen de mago.\nHechizos, varitas mágicas y seres extraños en un castillo increíble.\nDe 2 a 10 jugadores.\nDe 10 a 20 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0024",
+          "name": "Quantum Arena",
+          "description_web": "¡Desafía a tus amigos en un intenso torneo futurista! Forma equipo o lucha en un combate todos contra todos para conseguir la puntuación más alta. ¡Cuidado, porque los demás jugadores no son el único peligro al que enfrentarte!",
+          "video_url": "https://www.youtube.com/watch?v=DTEqwuaU9A4",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483671/Quantum_Arena_xgqs8q.png",
+          "features_web": "Juego competitivo de alta intensidad.\n¡Cuidado, hay trampas explosivas y balas que rebotan!\nDe 2 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        }
+      ]
+    },
+    {
+      "id": "ESCAPES",
+      "name": "VRINKA ESCAPES",
+      "logo_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785490613/vrinka_escapes_jbysea.png",
+      "description": "Escape rooms para todas las edades. Vive la aventura de resolver enigmas en equipo en partidas de 45 minutos. (Se recomienda que los menores de 10 años jueguen acompañados por mayores de 14).",
+      "visible": true,
+      "juegos": [
+        {
+          "id": "J0034",
+          "name": "Wayfinders",
+          "description_web": "¡Prepárate para un emocionante viaje espacial lleno de adrenalina!\n\nEsta aventura combina a la perfección secuencias interactivas con acción cinematográfica, manteniéndote al borde del asiento de principio a fin. \nViaja al corazón de la estación Aurora, que está al borde de la destrucción. \n\n¿Tu misión? Navegar a través de las devastadas salas de la estación y salvar a su tripulación antes de que sea demasiado tarde.",
+          "video_url": "https://www.youtube.com/watch?v=mXwfHAQ7Sng",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483686/Wayfinders_rnaxrd.png",
+          "features_web": "Escape room para todas las edades.\nAcción cinematográfica\nResuelve acertijos complejos\nDe 2 a 8 jugadores.\nDe 15 a 60 minutos.",
+          "state": "novedad"
+        },
+        {
+          "id": "J0062",
+          "name": "Trials of Atlantis",
+          "description_web": "La legendaria ciudad sumergida te espera…\n\nSumérgete en las profundidades para recuperar Atlantis. Resuelve acertijos y supera pruebas llenas de acción en esta aventura de escape totalmente cooperativa.\n\nSolo los equipos más fuertes lograrán hacer resurgir a Atlantis de las profundidades.",
+          "video_url": "https://www.youtube.com/watch?v=tYLw0_DSNPg",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483682/Trials_of_Atlantis_eeaonv.png",
+          "features_web": "Sumérgete en las profundidades para recuperar Atlantis\nResuelve acertijos y supera pruebas llenas de acción\nUna aventura de escape totalmente cooperativa\nDiseñado en torno al trabajo en equipo y a esos momentos de «un intento más»",
+          "state": "proximamente"
+        },
+        {
+          "id": "J0028",
+          "name": "School of Magic",
+          "description_web": "En School of Magic, dominarás hechizos para convertirte en un verdadero mago. \n\nUsa tu varita, lanza bolas de fuego y resuelve acertijos en este escape room cooperativo. \n\nSupera cada prueba, descubre secretos y desafía al dragón. \n\n¡Libera tu poder y derrota a la oscuridad!",
+          "video_url": "https://www.youtube.com/watch?v=g4w0_QZcOEk",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483675/School_of_Magic_vg9mdf.png",
+          "features_web": "",
+          "state": "novedad"
+        },
+        {
+          "id": "J0022",
+          "name": "Parvus Box",
+          "description_web": "En Parvus Box te necesitamos para un pequeño experimento…\n\nTe has ofrecido como voluntario para probar un dispositivo experimental capaz de reducirte a un tamaño microscópico. Cuando el experimento sale mal, tendrás que trabajar en equipo y resolver acertijos colaborativos para volver a tu tamaño normal.",
+          "video_url": "https://vimeo.com/1008766478",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483668/Parvus_Box_ybqz5t.png",
+          "features_web": "Escape room para todas las edades.\nCientíficos locos haciendo locuras.\nRecupera tu tamaño natural después de un experimento fallido.\nDe 2 a 6 jugadores.\nDe 40 a 55 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0017",
+          "name": "Mansion Of Death",
+          "description_web": "Juego de terror que te sumerge en una mansión embrujada. Con formato escape room de 45 minutos, desafía a resolver puzles, descubrir secretos y sobrevivir.\n\nCada rincón esconde misterios. Los jugadores deben comunicarse y actuar rápido para escapar antes del límite. Con su atmósfera inmersiva, combina horror y retos mentales. \nPara amantes de las emociones fuertes y las salas de escape.",
+          "video_url": "https://www.youtube.com/watch?v=vqalWkRroh0",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483665/Mansion_Of_Death_jvg2br.jpg",
+          "features_web": "",
+          "state": "normal"
+        },
+        {
+          "id": "J0026",
+          "name": "Riddle of Ruins",
+          "description_web": "¡Prepárate para una emocionante aventura en Riddle of Ruins! Adéntrate en un misterioso templo lleno de enigmas y desafíos que pondrán a prueba tu ingenio. Resuelve los acertijos, desbloquea secretos ocultos y supera este trepidante reto de escape.  \n\n¿Tienes lo necesario para descifrar los misterios del templo? ¡Sumérgete en la aventura y descúbrelo!",
+          "video_url": "https://vimeo.com/1058185902/42c089fda6?share=copy",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483674/Riddle_of_Ruins_a86jly.png",
+          "features_web": "Aventura de escape.\nAdéntrate en un misterioso templo lleno de enigmas.\nResuelve los acertijos y desbloquea secretos ocultos.\nRecomendado para 4/5 jugadores.\nDe 40 a 45 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0003",
+          "name": "B-Block Breakout",
+          "description_web": "Juega el papel de un grupo de truhanes encarcelados en el infame Bloque B en esta emocionante sala de escape. Resuelve rompecabezas juntos mientras avanzas por el interior de la prisión hacia la libertad.",
+          "video_url": "https://vimeo.com/836086687",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483661/B-Block_Breakout_h01fmh.png",
+          "features_web": "Aventura de escape.\nEscapa de la cárcel con tus compañeros.\nResuelve acertijos para alcanzar la libertad.\nDe 2 a 6 jugadores.\nDe 40 a 55 minutos.",
+          "state": "normal"
+        }
+      ]
+    },
+    {
+      "id": "TERROR",
+      "name": "VRINKA TERROR",
+      "logo_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785490613/vrinka_terror_m3sqwr.png",
+      "description": "Para los más atrevidos, desde los 12 años, que disfrutan de los escalofríos y gritan sin miedo.",
+      "visible": true,
+      "juegos": [
+        {
+          "id": "J0013",
+          "name": "Insanity The Haunting",
+          "description_web": "El Dr. Nikolov perdió a su esposa en un terrible accidente. Su única hija, Maureen, presenció la tragedia y nunca volvió a ser la misma. Nikolov abandonó la medicina y se dedicó a algo mucho más siniestro.\n\nUna noche fatídica, realizó un ritual para invocar una entidad poderosa, con la esperanza de que salvara a Maureen. Pero algo salió mal...\n\nEl asilo fue consumido por la sangre y la oscuridad y nunca más se supo de nadie.",
+          "video_url": "https://www.youtube.com/watch?v=FjMr5ZrPXFk",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483661/Insanity_The_Haunting_cxfkeo.jpg",
+          "features_web": "",
+          "state": "novedad"
+        },
+        {
+          "id": "J0017",
+          "name": "Mansion Of Death",
+          "description_web": "Juego de terror que te sumerge en una mansión embrujada. Con formato escape room de 45 minutos, desafía a resolver puzles, descubrir secretos y sobrevivir.\n\nCada rincón esconde misterios. Los jugadores deben comunicarse y actuar rápido para escapar antes del límite. Con su atmósfera inmersiva, combina horror y retos mentales. \nPara amantes de las emociones fuertes y las salas de escape.",
+          "video_url": "https://www.youtube.com/watch?v=vqalWkRroh0",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483665/Mansion_Of_Death_jvg2br.jpg",
+          "features_web": "",
+          "state": "novedad"
+        },
+        {
+          "id": "J0018",
+          "name": "Mission Z",
+          "description_web": "Entra con tu equipo en esta mansión infestada de zombis e intenta sobrevivir. \nLord Grave no se tomará demasiado amablemente tu presencia no deseada en su casa y rápidamente liberará sus criaturas sobre ti y tus amigos.\n\nTendrás que escabullirte y huir, tomando ascensores hacia destinos desconocidos... \nSe necesitará una combinación de gran puntería, cooperación y habilidades deductivas para superar a tus incómodos anfitriones... \n\n¿Podrás contar con tus amigos?",
+          "video_url": "https://youtu.be/VAj6_1Hj2ss?si=JPexUpcPiERhv337",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483676/Mission_Z_etbniv.jpg",
+          "features_web": "",
+          "state": "normal"
+        },
+        {
+          "id": "J0019",
+          "name": "Mission Z II",
+          "description_web": "Necesitamos tu ayuda para acabar con Lord Grave una vez más. Nueva información parece apuntar a una mina oculta en las profundidades de su mansión.\n\nExplora nuevos entornos, resuelve acertijos y escolta una bomba hasta las profundidades de la mina. Como sospechas, las creaciones de Lord Grave no agradecerán tu visita. Tu desintegrador y tu amigo serán tus únicos aliados en este entorno amenazador.\n\nEmbárcate en un loco viaje en tren y sobrevive al mayor desafío de Lord Grave hasta el momento. Mission Z II. ¡Prepárate para el viaje de tu vida!",
+          "video_url": "https://youtu.be/FhoVlrHLfsA?si=8JnleXbtuTSS75jk",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483665/Mission_Z_II_d9shjy.jpg",
+          "features_web": "",
+          "state": "normal"
+        },
+        {
+          "id": "J0010",
+          "name": "Death Squad",
+          "description_web": "Shooter de oleadas de zombis como nunca antes lo has experimentado. \n¡Sobrevive con tus amigos, mejora tus armas y explora nuevos entornos!",
+          "video_url": "https://youtu.be/2AVP0BNz_Yc?si=LeyuMksDRvrokKIr",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483657/Death_Squad_omtrfs.jpg",
+          "features_web": "",
+          "state": "normal"
+        },
+        {
+          "id": "J0027",
+          "name": "Rush Z",
+          "description_web": "Si te encanta disparar zombies, ¡este modo de supervivencia está hecho para ti! \nLas criaturas no se detendrán y tendrás que resistir todo el tiempo que puedas si quieres tener una oportunidad de sobrevivir.\n\nTraed vuestras armas y aguantad que no podréis descansar durante un rato. \n¡No dejes que esas criaturas te alcancen si no quieres que te muerdan! \n¡Ven preparado y prepárate para luchar!",
+          "video_url": "https://youtu.be/kfNQSBCljPM?si=TZUe8C9ciBTpfv_E",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483674/Rush_Z_xtfogm.jpg",
+          "features_web": "",
+          "state": "normal"
+        },
+        {
+          "id": "J0007",
+          "name": "Dark Z",
+          "description_web": "¿Ya no tienes miedo a la oscuridad? \n¿En realidad? Si estás tan seguro, entra en el corazón de DARK Z\n¡En la cripta y sobrevive a las hordas de monstruos que se esconden en la oscuridad!\n\nAvanzar en total oscuridad será un duro desafío. \nTus habilidades de puntería ya no serán suficientes: necesitarás un equipo cooperativo y mucha suerte para salir vivo de este viaje...",
+          "video_url": "https://youtu.be/CmXsz1Siv9o?si=2wNC8Qox1h7wVyhb",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483655/Dark_Z_nwy8au.jpg",
+          "features_web": "",
+          "state": "normal"
+        }
+      ]
+    }
+  ]
+}
