@@ -393,14 +393,9 @@
   </div>
 
   <script>
-    // --- CONFIGURACIÓN DE GOOGLE SHEETS ---
-    // Coloca aquí las URLs de publicación como CSV para cada hoja.
-    // Para obtenerlas: Archivo > Compartir > Publicar en la web > Selecciona la hoja > Formato CSV > Publicar.
-    const SHEET_URLS = {
-      'universe-list': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRzRNvCSIvUAMeDPppRlpnZagjtVrtrCCWCJPVQRijteei6N0q0vCpzYQCNqu5H4JgvJDJTV1vB1iF5/pub?gid=724540651&output=csv',
-      'game-list': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRzRNvCSIvUAMeDPppRlpnZagjtVrtrCCWCJPVQRijteei6N0q0vCpzYQCNqu5H4JgvJDJTV1vB1iF5/pub?gid=619167243&output=csv'
-    };
-    // ------------------------------------
+    // --- CONFIGURACIÓN ---
+    const CATALOGO_URL = 'catalogo.json';
+    // ---------------------
 
     let juegosCargados = [];
     let juegoActualIndex = -1;
@@ -411,136 +406,45 @@
     let universosCargados = [];
     let lastUniverseId = null; // Variable para guardar el ID del último universo
 
-    async function fetchData(sheetName) {
-      let url = SHEET_URLS[sheetName];
-      if (!url) {
-        throw new Error(`No se encontró URL para la hoja: ${sheetName}`);
-      }
-
-      // Añadimos un parámetro "cache buster" para forzar al navegador a ignorar
-      // respuestas de error cacheadas y solicitar los datos de nuevo.
-      const urlWithCacheBuster = `${url}&t=${new Date().getTime()}`;
-      const res = await fetch(urlWithCacheBuster);
-
+    async function cargarCatalogo() {
+      const res = await fetch(CATALOGO_URL, { cache: 'no-store' });
       if (!res.ok) {
-        throw new Error(`Error al cargar la hoja ${sheetName}: ${res.statusText}`);
+        throw new Error(`Error al cargar ${CATALOGO_URL}: ${res.status} ${res.statusText}`);
       }
-      const csvText = await res.text();
+      const data = await res.json();
 
-      // --- NUEVO PARSER DE CSV ---
-      // Este parser es más robusto y maneja correctamente los saltos de línea dentro de las celdas.
-      const parseCsv = (text) => {
-        if (!text) {
-          return { headers: [], rows: [] };
-        }
+      universosCargados = (data.colecciones || [])
+        .filter(c => c.visible)
+        .map(c => ({
+          id: c.id,
+          name: c.name,
+          logo_url: c.logo_url,
+          description: c.description || "",
+        }));
 
-        const rows = [];
-        let currentRow = [];
-        let currentField = '';
-        let inQuotes = false;
-
-        for (let i = 0; i < text.length; i++) {
-          const char = text[i];
-
-          if (inQuotes) {
-            if (char === '"') {
-              if (i + 1 < text.length && text[i + 1] === '"') { // Es una comilla escapada ""
-                currentField += '"';
-                i++; // Saltamos la siguiente comilla
-              } else {
-                inQuotes = false;
-              }
-            } else {
-              currentField += char;
-            }
-          } else {
-            if (char === '"') {
-              inQuotes = true;
-            } else if (char === ',') {
-              currentRow.push(currentField.trim());
-              currentField = '';
-            } else if (char === '\n' || char === '\r') {
-              if (i > 0 && text[i - 1] !== '\r' && text[i - 1] !== '\n') { // Fin de la fila
-                currentRow.push(currentField.trim());
-                rows.push(currentRow);
-                currentRow = [];
-                currentField = '';
-              }
-            } else {
-              currentField += char;
-            }
-          }
-        }
-        // Añadir la última fila si existe
-        if (currentRow.length > 0 || currentField) {
-          currentRow.push(currentField.trim()); // Asegura que el último campo se añada
-          rows.push(currentRow);
-        }
-
-        if (rows.length === 0) return { headers: [], rows: [] };
-
-        const headers = rows[0];
-        const dataRows = rows.slice(1);
-
-        return { headers, rows: dataRows };
-      };
-
-      return parseCsv(csvText);
-    }
-
-    async function cargarUniversos() {
-      const { headers, rows } = await fetchData("universe-list");
-      universosCargados = rows.map(row => {
-        const rowData = {};
-        headers.forEach((header, i) => {
-          rowData[header] = row[i] || "";
+      const allGames = [];
+      for (const universo of universosCargados) {
+        const dataUniverso = (data.colecciones || []).find(c => c.id === universo.id);
+        (dataUniverso?.juegos || []).forEach(j => {
+          allGames.push({
+            game: j.name || "",
+            id: j.id || "",
+            description: j.description_web || "",
+            universeId: universo.id,
+            video_url: j.video_url || "",
+            cover_url: j.cover_url || "",
+            features: (j.features_web || "").split('\n').map(linea => linea.trim()).filter(Boolean),
+            state: (j.state || "").toLowerCase(),
+          });
         });
-        return {
-          id: (rowData.id || "").trim(),
-          name: (rowData.name || "").trim(),
-          logo_url: (rowData.logo_url || "").trim(),
-          description: (rowData.description || "").trim(),
-        };
-      });
-    }
-
-    async function cargarJuegos() {
-      const { headers, rows } = await fetchData("game-list");
-
-      const allGames = rows.map(row => {
-        // Create an intermediate object mapping headers to row values for easier access.
-        const rowData = {};
-        headers.forEach((header, i) => {
-          rowData[header] = row[i] || "";
-        });
-
-        if (rows.indexOf(row) === 0) {
-          // console.log("DEBUG - Headers found:", headers);
-          // console.log("DEBUG - Row 0 raw data:", rowData);
-        }
-
-        // Explicitly map the sheet columns to the properties our script uses.
-        // This is more robust than a dynamic mapping loop.
-        const featuresValue = (rowData.features || "").trim();
-        return {
-          game: (rowData.name || "").trim(),
-          id: (rowData.id || "").trim(),
-          description: (rowData.description || "").trim(),
-          universeId: (rowData.universe_id || "").trim(),
-          video_url: (rowData.video_url || "").trim(),
-          cover_url: (rowData.cover_url || "").trim(),
-          features: featuresValue ? featuresValue.split('\n').map(linea => linea.trim()).filter(Boolean) : [],
-          state: (rowData.state || "").trim().toLowerCase(),
-        };
-      });
-
+      }
       // Filtrar juegos que tienen portada. Es el requisito principal para mostrarse.
       juegosCargados = allGames.filter(juego => juego.cover_url);
     }
 
     async function inicializarPagina() {
       try {
-        await Promise.all([cargarUniversos(), cargarJuegos()]);
+        await cargarCatalogo();
 
         // Construir la lista de navegación en el orden correcto de los universos
         juegosEnOrden = [];
@@ -641,7 +545,7 @@
         if (contentRendered) {
           document.getElementById('loader').remove();
         } else {
-          document.getElementById('loader').textContent = 'No se encontraron juegos. Revisa que los IDs de universo coincidan en ambas hojas de cálculo.';
+          document.getElementById('loader').textContent = 'No se encontraron juegos disponibles.';
         }
       } catch (err) {
         console.error("Error cargando datos:", err);
