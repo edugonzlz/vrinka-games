@@ -8,15 +8,6 @@
       "visible": true,
       "juegos": [
         {
-          "id": "J0008",
-          "name": "Dead Ahead",
-          "description_web": "¿Tienes lo que se necesita para sobrevivir al apocalipsis?\n\n¡El apocalipsis ha llegado! \nTú y tus amigos haréis una última defensa contra los no-muertos. Tendréis 30 segundos para preparar vuestras defensas y elegir vuestras armas antes de que los zombis ataquen. Con cada oleada, los zombis se vuelven más rápidos y la presión aumenta. ¿Tienes lo que hace falta para sobrevivir al apocalipsis?",
-          "video_url": "https://www.youtube.com/watch?v=ArbOQp6h4So",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483657/Dead_Ahead_mxbaja.png",
-          "features_web": "Disparar a zombis nunca fue tan divertido.\nAcción trepidante para los más atrevidos.\nRepara tus barricadas y ¡Sobrevive!.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
-          "state": "normal"
-        },
-        {
           "id": "J0032",
           "name": "Terminator Uprising",
           "description_web": "¡ESTRENO MUNDIAL!\n\nÚnete a la resistencia y lucha por la supervivencia de la humanidad en Terminator: Uprising.\n\nAmbientado en el año 2029, después de los eventos del Día del Juicio Final, lucha junto a la resistencia liderada por John Connor mientras se alzan para derrotar a Skynet de una vez por todas.\n\nDefiéndete de hordas de letales T-800, enfréntate a los temibles Hunter-Killers y derriba a la amenaza robótica para salvar a la humanidad.\n\n¿Tienes lo que se necesita para salvar a la humanidad? ¿O serás aplastado bajo las implacables fuerzas de Skynet?\n\n¡Únete a la lucha!",
@@ -26,12 +17,21 @@
           "state": "novedad"
         },
         {
-          "id": "J0060",
-          "name": "Versus",
-          "description_web": "Laser Tag - Shooter PvP\n\nVersus es un juego de laser tag en realidad virtual retrofuturista. Prepárate para épicas batallas en equipo con tu bláster V99 y tu escudo en este juego de disparos en primera persona lleno de acción.\n\nAdéntrate en una arena de laser tag en realidad virtual retrofuturista, diseñada para una acción competitiva trepidante.",
+          "id": "J0020",
+          "name": "Monkey Madness",
+          "description_web": "¡VERSIÓN NAVIDEÑA!\n\nMonkey Madness: Juegos de la Selva es un divertido juego de fiesta donde competís para ganarse el favor del Gran Emperador Mono. \nEnfréntate hasta en 25 emocionantes desafíos de la selva que pondrán a prueba tu habilidad, ritmo, reflejos e incluso tu suerte.\nExplota globos, esquiva paredes, escala lianas, machaca clavos, sigue el ritmo en el juego de bongos, o lanza fruta con puntería perfecta. \n\nCada juego trae consigo nuevo caos y risas. Elige tus juegos favoritos o deja que la selva decida tu destino.\nRápido, divertido y ferozmente competitivo, ¡Monkey Madness: Juegos de la Selva es el enfrentamiento de RV definitivo donde solo uno puede convertirse en el campeón del emperador!",
+          "video_url": "https://www.youtube.com/watch?v=KCjXgfNrLy4",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483667/Monkey_Madness_rdl5wl.jpg",
+          "features_web": "Selección sobre 25 minijuegos.\nHazte una foto de grupo final.\nDe 2 a 10 jugadores.\nDe 10 a 20 minutos.",
+          "state": "novedad"
+        },
+        {
+          "id": "J0063",
+          "name": "Arrowsong: Dark Omen",
+          "description_web": "Los demonios han invadido el pueblo y han corrompido a sus habitantes. Ahora vagan por las calles, sembrando la muerte y la destrucción. ¿Te alzarás para detenerlos y salvar el mundo?",
           "video_url": "",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483685/Versus_bo1klc.png",
-          "features_web": "Batallas PvP de hasta 8 jugadores\nModos Batalla por equipos y Todos contra todos\nModos competitivos Clásico y Pro\n6 mapas únicos para cada tamaño de arena\nUsa el bláster V99 y el escudo de energía\nCarga tu escudo para desatar un Megadisparo devastador",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483653/Arrowsong-_Dark_Omen_tvb3od.png",
+          "features_web": "Nuevos personajes, enemigos y mecánicas de juego\nMúltiples ubicaciones a lo largo de una oscura campaña centrada en la historia\nAcción cinematográfica y encuentros emocionantes\nUna aventura épica para evitar el fin del mundo",
           "state": "proximamente"
         },
         {
@@ -44,22 +44,22 @@
           "state": "proximamente"
         },
         {
-          "id": "J0063",
-          "name": "Arrowsong: Dark Omen",
-          "description_web": "Los demonios han invadido el pueblo y han corrompido a sus habitantes. Ahora vagan por las calles, sembrando la muerte y la destrucción. ¿Te alzarás para detenerlos y salvar el mundo?",
+          "id": "J0060",
+          "name": "Versus",
+          "description_web": "Laser Tag - Shooter PvP\n\nVersus es un juego de laser tag en realidad virtual retrofuturista. Prepárate para épicas batallas en equipo con tu bláster V99 y tu escudo en este juego de disparos en primera persona lleno de acción.\n\nAdéntrate en una arena de laser tag en realidad virtual retrofuturista, diseñada para una acción competitiva trepidante.",
           "video_url": "",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483653/Arrowsong-_Dark_Omen_tvb3od.png",
-          "features_web": "Nuevos personajes, enemigos y mecánicas de juego\nMúltiples ubicaciones a lo largo de una oscura campaña centrada en la historia\nAcción cinematográfica y encuentros emocionantes\nUna aventura épica para evitar el fin del mundo",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483685/Versus_bo1klc.png",
+          "features_web": "Batallas PvP de hasta 8 jugadores\nModos Batalla por equipos y Todos contra todos\nModos competitivos Clásico y Pro\n6 mapas únicos para cada tamaño de arena\nUsa el bláster V99 y el escudo de energía\nCarga tu escudo para desatar un Megadisparo devastador",
           "state": "proximamente"
         },
         {
-          "id": "J0020",
-          "name": "Monkey Madness",
-          "description_web": "¡VERSIÓN NAVIDEÑA!\n\nMonkey Madness: Juegos de la Selva es un divertido juego de fiesta donde competís para ganarse el favor del Gran Emperador Mono. \nEnfréntate hasta en 25 emocionantes desafíos de la selva que pondrán a prueba tu habilidad, ritmo, reflejos e incluso tu suerte.\nExplota globos, esquiva paredes, escala lianas, machaca clavos, sigue el ritmo en el juego de bongos, o lanza fruta con puntería perfecta. \n\nCada juego trae consigo nuevo caos y risas. Elige tus juegos favoritos o deja que la selva decida tu destino.\nRápido, divertido y ferozmente competitivo, ¡Monkey Madness: Juegos de la Selva es el enfrentamiento de RV definitivo donde solo uno puede convertirse en el campeón del emperador!",
-          "video_url": "https://www.youtube.com/watch?v=KCjXgfNrLy4",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483667/Monkey_Madness_rdl5wl.jpg",
-          "features_web": "Selección sobre 25 minijuegos.\nHazte una foto de grupo final.\nDe 2 a 10 jugadores.\nDe 10 a 20 minutos.",
-          "state": "novedad"
+          "id": "J0008",
+          "name": "Dead Ahead",
+          "description_web": "¿Tienes lo que se necesita para sobrevivir al apocalipsis?\n\n¡El apocalipsis ha llegado! \nTú y tus amigos haréis una última defensa contra los no-muertos. Tendréis 30 segundos para preparar vuestras defensas y elegir vuestras armas antes de que los zombis ataquen. Con cada oleada, los zombis se vuelven más rápidos y la presión aumenta. ¿Tienes lo que hace falta para sobrevivir al apocalipsis?",
+          "video_url": "https://www.youtube.com/watch?v=ArbOQp6h4So",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483657/Dead_Ahead_mxbaja.png",
+          "features_web": "Disparar a zombis nunca fue tan divertido.\nAcción trepidante para los más atrevidos.\nRepara tus barricadas y ¡Sobrevive!.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
         },
         {
           "id": "J0002",
@@ -143,15 +143,6 @@
           "state": "novedad"
         },
         {
-          "id": "J0062",
-          "name": "Trials of Atlantis",
-          "description_web": "La legendaria ciudad sumergida te espera…\n\nSumérgete en las profundidades para recuperar Atlantis. Resuelve acertijos y supera pruebas llenas de acción en esta aventura de escape totalmente cooperativa.\n\nSolo los equipos más fuertes lograrán hacer resurgir a Atlantis de las profundidades.",
-          "video_url": "https://www.youtube.com/watch?v=tYLw0_DSNPg",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483682/Trials_of_Atlantis_eeaonv.png",
-          "features_web": "Sumérgete en las profundidades para recuperar Atlantis\nResuelve acertijos y supera pruebas llenas de acción\nUna aventura de escape totalmente cooperativa\nDiseñado en torno al trabajo en equipo y a esos momentos de «un intento más»",
-          "state": "proximamente"
-        },
-        {
           "id": "J0028",
           "name": "School of Magic",
           "description_web": "En School of Magic, dominarás hechizos para convertirte en un verdadero mago. \n\nUsa tu varita, lanza bolas de fuego y resuelve acertijos en este escape room cooperativo. \n\nSupera cada prueba, descubre secretos y desafía al dragón. \n\n¡Libera tu poder y derrota a la oscuridad!",
@@ -159,6 +150,15 @@
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483675/School_of_Magic_vg9mdf.png",
           "features_web": "",
           "state": "novedad"
+        },
+        {
+          "id": "J0062",
+          "name": "Trials of Atlantis",
+          "description_web": "La legendaria ciudad sumergida te espera…\n\nSumérgete en las profundidades para recuperar Atlantis. Resuelve acertijos y supera pruebas llenas de acción en esta aventura de escape totalmente cooperativa.\n\nSolo los equipos más fuertes lograrán hacer resurgir a Atlantis de las profundidades.",
+          "video_url": "https://www.youtube.com/watch?v=tYLw0_DSNPg",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483682/Trials_of_Atlantis_eeaonv.png",
+          "features_web": "Sumérgete en las profundidades para recuperar Atlantis\nResuelve acertijos y supera pruebas llenas de acción\nUna aventura de escape totalmente cooperativa\nDiseñado en torno al trabajo en equipo y a esos momentos de «un intento más»",
+          "state": "proximamente"
         },
         {
           "id": "J0022",
