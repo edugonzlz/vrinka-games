@@ -143,15 +143,6 @@
           "state": "novedad"
         },
         {
-          "id": "J0026",
-          "name": "Riddle of Ruins",
-          "description_web": "¡Prepárate para una emocionante aventura en Riddle of Ruins! Adéntrate en un misterioso templo lleno de enigmas y desafíos que pondrán a prueba tu ingenio. Resuelve los acertijos, desbloquea secretos ocultos y supera este trepidante reto de escape.  \n\n¿Tienes lo necesario para descifrar los misterios del templo? ¡Sumérgete en la aventura y descúbrelo!",
-          "video_url": "https://vimeo.com/1058185902/42c089fda6?share=copy",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483674/Riddle_of_Ruins_a86jly.png",
-          "features_web": "Aventura de escape.\nAdéntrate en un misterioso templo lleno de enigmas.\nResuelve los acertijos y desbloquea secretos ocultos.\nRecomendado para 4/5 jugadores.\nDe 40 a 45 minutos.",
-          "state": "normal"
-        },
-        {
           "id": "J0028",
           "name": "School of Magic",
           "description_web": "En School of Magic, dominarás hechizos para convertirte en un verdadero mago. \n\nUsa tu varita, lanza bolas de fuego y resuelve acertijos en este escape room cooperativo. \n\nSupera cada prueba, descubre secretos y desafía al dragón. \n\n¡Libera tu poder y derrota a la oscuridad!",
@@ -179,21 +170,30 @@
           "state": "normal"
         },
         {
-          "id": "J0017",
-          "name": "Mansion Of Death",
-          "description_web": "Juego de terror que te sumerge en una mansión embrujada. Con formato escape room de 45 minutos, desafía a resolver puzles, descubrir secretos y sobrevivir.\n\nCada rincón esconde misterios. Los jugadores deben comunicarse y actuar rápido para escapar antes del límite. Con su atmósfera inmersiva, combina horror y retos mentales. \nPara amantes de las emociones fuertes y las salas de escape.",
-          "video_url": "https://www.youtube.com/watch?v=vqalWkRroh0",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483665/Mansion_Of_Death_jvg2br.jpg",
-          "features_web": "",
-          "state": "normal"
-        },
-        {
           "id": "J0003",
           "name": "B-Block Breakout",
           "description_web": "Juega el papel de un grupo de truhanes encarcelados en el infame Bloque B en esta emocionante sala de escape. Resuelve rompecabezas juntos mientras avanzas por el interior de la prisión hacia la libertad.",
           "video_url": "https://vimeo.com/836086687",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483661/B-Block_Breakout_h01fmh.png",
           "features_web": "Aventura de escape.\nEscapa de la cárcel con tus compañeros.\nResuelve acertijos para alcanzar la libertad.\nDe 2 a 6 jugadores.\nDe 40 a 55 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0026",
+          "name": "Riddle of Ruins",
+          "description_web": "¡Prepárate para una emocionante aventura en Riddle of Ruins! Adéntrate en un misterioso templo lleno de enigmas y desafíos que pondrán a prueba tu ingenio. Resuelve los acertijos, desbloquea secretos ocultos y supera este trepidante reto de escape.  \n\n¿Tienes lo necesario para descifrar los misterios del templo? ¡Sumérgete en la aventura y descúbrelo!",
+          "video_url": "https://vimeo.com/1058185902/42c089fda6?share=copy",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483674/Riddle_of_Ruins_a86jly.png",
+          "features_web": "Aventura de escape.\nAdéntrate en un misterioso templo lleno de enigmas.\nResuelve los acertijos y desbloquea secretos ocultos.\nRecomendado para 4/5 jugadores.\nDe 40 a 45 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0017",
+          "name": "Mansion Of Death",
+          "description_web": "Juego de terror que te sumerge en una mansión embrujada. Con formato escape room de 45 minutos, desafía a resolver puzles, descubrir secretos y sobrevivir.\n\nCada rincón esconde misterios. Los jugadores deben comunicarse y actuar rápido para escapar antes del límite. Con su atmósfera inmersiva, combina horror y retos mentales. \nPara amantes de las emociones fuertes y las salas de escape.",
+          "video_url": "https://www.youtube.com/watch?v=vqalWkRroh0",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483665/Mansion_Of_Death_jvg2br.jpg",
+          "features_web": "",
           "state": "normal"
         }
       ]
@@ -212,7 +212,7 @@
           "video_url": "https://www.youtube.com/watch?v=FjMr5ZrPXFk",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483661/Insanity_The_Haunting_cxfkeo.jpg",
           "features_web": "",
-          "state": "novedad"
+          "state": "normal"
         },
         {
           "id": "J0017",
@@ -221,7 +221,7 @@
           "video_url": "https://www.youtube.com/watch?v=vqalWkRroh0",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483665/Mansion_Of_Death_jvg2br.jpg",
           "features_web": "",
-          "state": "novedad"
+          "state": "normal"
         },
         {
           "id": "J0018",
