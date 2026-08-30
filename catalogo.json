@@ -14,51 +14,6 @@
           "video_url": "https://youtu.be/j9PvZ0QKcJ4",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483682/Terminator_Uprising_hpc49v.png",
           "features_web": "Lucha por la supervivencia humana.\nSe ambienta en el año 2029, tras el Día del Juicio Final.\nÚnete a la resistencia de John Connor para derrotar a Skynet.\nEnfréntate a hordas de T-800 y a los Hunter-Killers.\nDe 1 a 10 jugadores\n15 minutos",
-          "state": "novedad"
-        },
-        {
-          "id": "J0020",
-          "name": "Monkey Madness",
-          "description_web": "¡VERSIÓN NAVIDEÑA!\n\nMonkey Madness: Juegos de la Selva es un divertido juego de fiesta donde competís para ganarse el favor del Gran Emperador Mono. \nEnfréntate hasta en 25 emocionantes desafíos de la selva que pondrán a prueba tu habilidad, ritmo, reflejos e incluso tu suerte.\nExplota globos, esquiva paredes, escala lianas, machaca clavos, sigue el ritmo en el juego de bongos, o lanza fruta con puntería perfecta. \n\nCada juego trae consigo nuevo caos y risas. Elige tus juegos favoritos o deja que la selva decida tu destino.\nRápido, divertido y ferozmente competitivo, ¡Monkey Madness: Juegos de la Selva es el enfrentamiento de RV definitivo donde solo uno puede convertirse en el campeón del emperador!",
-          "video_url": "https://www.youtube.com/watch?v=KCjXgfNrLy4",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483667/Monkey_Madness_rdl5wl.jpg",
-          "features_web": "Selección sobre 25 minijuegos.\nHazte una foto de grupo final.\nDe 2 a 10 jugadores.\nDe 10 a 20 minutos.",
-          "state": "novedad"
-        },
-        {
-          "id": "J0063",
-          "name": "Arrowsong: Dark Omen",
-          "description_web": "Los demonios han invadido el pueblo y han corrompido a sus habitantes. Ahora vagan por las calles, sembrando la muerte y la destrucción. ¿Te alzarás para detenerlos y salvar el mundo?",
-          "video_url": "",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483653/Arrowsong-_Dark_Omen_tvb3od.png",
-          "features_web": "Nuevos personajes, enemigos y mecánicas de juego\nMúltiples ubicaciones a lo largo de una oscura campaña centrada en la historia\nAcción cinematográfica y encuentros emocionantes\nUna aventura épica para evitar el fin del mundo",
-          "state": "proximamente"
-        },
-        {
-          "id": "J0061",
-          "name": "Space Dance Harmony",
-          "description_web": "Baile y ritmo\n\nReplica las coreografías en espejo con todo tu cuerpo para ganar puntos.\n\n¡Muévete al ritmo de la música para llegar a lo más alto de la clasificación y brillar en la pista de baile!",
-          "video_url": "",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483678/Space_Dance_Harmony_c8nbai.png",
-          "features_web": "Replica las coreografías en espejo con todo tu cuerpo para ganar puntos\nMuévete al ritmo de la música para llegar a lo más alto de la clasificación y brillar en la pista de baile",
-          "state": "proximamente"
-        },
-        {
-          "id": "J0060",
-          "name": "Versus",
-          "description_web": "Laser Tag - Shooter PvP\n\nVersus es un juego de laser tag en realidad virtual retrofuturista. Prepárate para épicas batallas en equipo con tu bláster V99 y tu escudo en este juego de disparos en primera persona lleno de acción.\n\nAdéntrate en una arena de laser tag en realidad virtual retrofuturista, diseñada para una acción competitiva trepidante.",
-          "video_url": "",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483685/Versus_bo1klc.png",
-          "features_web": "Batallas PvP de hasta 8 jugadores\nModos Batalla por equipos y Todos contra todos\nModos competitivos Clásico y Pro\n6 mapas únicos para cada tamaño de arena\nUsa el bláster V99 y el escudo de energía\nCarga tu escudo para desatar un Megadisparo devastador",
-          "state": "proximamente"
-        },
-        {
-          "id": "J0008",
-          "name": "Dead Ahead",
-          "description_web": "¿Tienes lo que se necesita para sobrevivir al apocalipsis?\n\n¡El apocalipsis ha llegado! \nTú y tus amigos haréis una última defensa contra los no-muertos. Tendréis 30 segundos para preparar vuestras defensas y elegir vuestras armas antes de que los zombis ataquen. Con cada oleada, los zombis se vuelven más rápidos y la presión aumenta. ¿Tienes lo que hace falta para sobrevivir al apocalipsis?",
-          "video_url": "https://www.youtube.com/watch?v=ArbOQp6h4So",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483657/Dead_Ahead_mxbaja.png",
-          "features_web": "Disparar a zombis nunca fue tan divertido.\nAcción trepidante para los más atrevidos.\nRepara tus barricadas y ¡Sobrevive!.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
           "state": "normal"
         },
         {
@@ -71,12 +26,57 @@
           "state": "normal"
         },
         {
+          "id": "J0063",
+          "name": "Arrowsong: Dark Omen",
+          "description_web": "Los demonios han invadido el pueblo y han corrompido a sus habitantes. Ahora vagan por las calles, sembrando la muerte y la destrucción. ¿Te alzarás para detenerlos y salvar el mundo?",
+          "video_url": "",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483653/Arrowsong-_Dark_Omen_tvb3od.png",
+          "features_web": "Nuevos personajes, enemigos y mecánicas de juego\nMúltiples ubicaciones a lo largo de una oscura campaña centrada en la historia\nAcción cinematográfica y encuentros emocionantes\nUna aventura épica para evitar el fin del mundo",
+          "state": "proximamente"
+        },
+        {
+          "id": "J0060",
+          "name": "Versus",
+          "description_web": "Laser Tag - Shooter PvP\n\nVersus es un juego de laser tag en realidad virtual retrofuturista. Prepárate para épicas batallas en equipo con tu bláster V99 y tu escudo en este juego de disparos en primera persona lleno de acción.\n\nAdéntrate en una arena de laser tag en realidad virtual retrofuturista, diseñada para una acción competitiva trepidante.",
+          "video_url": "https://www.youtube.com/watch?v=k_P8aVcc_Wc",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483685/Versus_bo1klc.png",
+          "features_web": "Batallas PvP de hasta 8 jugadores\nModos Batalla por equipos y Todos contra todos\nModos competitivos Clásico y Pro\n6 mapas únicos para cada tamaño de arena\nUsa el bláster V99 y el escudo de energía\nCarga tu escudo para desatar un Megadisparo devastador",
+          "state": "proximamente"
+        },
+        {
+          "id": "J0061",
+          "name": "Space Dance Harmony",
+          "description_web": "Baile y ritmo\n\nReplica las coreografías en espejo con todo tu cuerpo para ganar puntos.\n\n¡Muévete al ritmo de la música para llegar a lo más alto de la clasificación y brillar en la pista de baile!",
+          "video_url": "https://www.youtube.com/watch?v=DXAdxrsxZBk",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483678/Space_Dance_Harmony_c8nbai.png",
+          "features_web": "",
+          "state": "proximamente"
+        },
+        {
           "id": "J0023",
           "name": "Plush Rush",
           "description_web": "¡VERSIÓN NAVIDEÑA!\n\nPlush Rush combina risas con estrategia y lleva a tu equipo a un mundo de juguetes a gran escala.\n\nPlush Rush es la aventura definitiva de defensa de torres en VR, apta para toda la familia. Redúcete al tamaño de un juguete, forma equipo con tu grupo y protege el tarro de caramelos de oleadas de enemigos traviesos. Fácil de aprender, increíblemente divertida y perfecta para grupos.",
           "video_url": "https://www.youtube.com/watch?v=tc8Kh9HbhHE",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483671/Plush_Rush_llsz4o.png",
           "features_web": "Defensa de torres colaborativa.\nEres un pequeño peluche adorable.\nY tienes que defenderte de juguetes rebeldes que atacan.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0020",
+          "name": "Monkey Madness",
+          "description_web": "¡VERSIÓN NAVIDEÑA!\n\nMonkey Madness: Juegos de la Selva es un divertido juego de fiesta donde competís para ganarse el favor del Gran Emperador Mono. \nEnfréntate hasta en 25 emocionantes desafíos de la selva que pondrán a prueba tu habilidad, ritmo, reflejos e incluso tu suerte.\nExplota globos, esquiva paredes, escala lianas, machaca clavos, sigue el ritmo en el juego de bongos, o lanza fruta con puntería perfecta. \n\nCada juego trae consigo nuevo caos y risas. Elige tus juegos favoritos o deja que la selva decida tu destino.\nRápido, divertido y ferozmente competitivo, ¡Monkey Madness: Juegos de la Selva es el enfrentamiento de RV definitivo donde solo uno puede convertirse en el campeón del emperador!",
+          "video_url": "https://www.youtube.com/watch?v=KCjXgfNrLy4",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483667/Monkey_Madness_rdl5wl.jpg",
+          "features_web": "Selección sobre 25 minijuegos.\nHazte una foto de grupo final.\nDe 2 a 10 jugadores.\nDe 10 a 20 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0008",
+          "name": "Dead Ahead",
+          "description_web": "¿Tienes lo que se necesita para sobrevivir al apocalipsis?\n\n¡El apocalipsis ha llegado! \nTú y tus amigos haréis una última defensa contra los no-muertos. Tendréis 30 segundos para preparar vuestras defensas y elegir vuestras armas antes de que los zombis ataquen. Con cada oleada, los zombis se vuelven más rápidos y la presión aumenta. ¿Tienes lo que hace falta para sobrevivir al apocalipsis?",
+          "video_url": "https://www.youtube.com/watch?v=ArbOQp6h4So",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483657/Dead_Ahead_mxbaja.png",
+          "features_web": "Disparar a zombis nunca fue tan divertido.\nAcción trepidante para los más atrevidos.\nRepara tus barricadas y ¡Sobrevive!.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
           "state": "normal"
         },
         {
@@ -143,6 +143,15 @@
           "state": "novedad"
         },
         {
+          "id": "J0026",
+          "name": "Riddle of Ruins",
+          "description_web": "¡Prepárate para una emocionante aventura en Riddle of Ruins! Adéntrate en un misterioso templo lleno de enigmas y desafíos que pondrán a prueba tu ingenio. Resuelve los acertijos, desbloquea secretos ocultos y supera este trepidante reto de escape.  \n\n¿Tienes lo necesario para descifrar los misterios del templo? ¡Sumérgete en la aventura y descúbrelo!",
+          "video_url": "https://vimeo.com/1058185902/42c089fda6?share=copy",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483674/Riddle_of_Ruins_a86jly.png",
+          "features_web": "Aventura de escape.\nAdéntrate en un misterioso templo lleno de enigmas.\nResuelve los acertijos y desbloquea secretos ocultos.\nRecomendado para 4/5 jugadores.\nDe 40 a 45 minutos.",
+          "state": "normal"
+        },
+        {
           "id": "J0028",
           "name": "School of Magic",
           "description_web": "En School of Magic, dominarás hechizos para convertirte en un verdadero mago. \n\nUsa tu varita, lanza bolas de fuego y resuelve acertijos en este escape room cooperativo. \n\nSupera cada prueba, descubre secretos y desafía al dragón. \n\n¡Libera tu poder y derrota a la oscuridad!",
@@ -176,15 +185,6 @@
           "video_url": "https://www.youtube.com/watch?v=vqalWkRroh0",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483665/Mansion_Of_Death_jvg2br.jpg",
           "features_web": "",
-          "state": "normal"
-        },
-        {
-          "id": "J0026",
-          "name": "Riddle of Ruins",
-          "description_web": "¡Prepárate para una emocionante aventura en Riddle of Ruins! Adéntrate en un misterioso templo lleno de enigmas y desafíos que pondrán a prueba tu ingenio. Resuelve los acertijos, desbloquea secretos ocultos y supera este trepidante reto de escape.  \n\n¿Tienes lo necesario para descifrar los misterios del templo? ¡Sumérgete en la aventura y descúbrelo!",
-          "video_url": "https://vimeo.com/1058185902/42c089fda6?share=copy",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483674/Riddle_of_Ruins_a86jly.png",
-          "features_web": "Aventura de escape.\nAdéntrate en un misterioso templo lleno de enigmas.\nResuelve los acertijos y desbloquea secretos ocultos.\nRecomendado para 4/5 jugadores.\nDe 40 a 45 minutos.",
           "state": "normal"
         },
         {
