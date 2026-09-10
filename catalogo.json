@@ -8,31 +8,13 @@
       "visible": true,
       "juegos": [
         {
-          "id": "J0032",
-          "name": "Terminator Uprising",
-          "description_web": "¡ESTRENO MUNDIAL!\n\nÚnete a la resistencia y lucha por la supervivencia de la humanidad en Terminator: Uprising.\n\nAmbientado en el año 2029, después de los eventos del Día del Juicio Final, lucha junto a la resistencia liderada por John Connor mientras se alzan para derrotar a Skynet de una vez por todas.\n\nDefiéndete de hordas de letales T-800, enfréntate a los temibles Hunter-Killers y derriba a la amenaza robótica para salvar a la humanidad.\n\n¿Tienes lo que se necesita para salvar a la humanidad? ¿O serás aplastado bajo las implacables fuerzas de Skynet?\n\n¡Únete a la lucha!",
-          "video_url": "https://youtu.be/j9PvZ0QKcJ4",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483682/Terminator_Uprising_hpc49v.png",
-          "features_web": "Lucha por la supervivencia humana.\nSe ambienta en el año 2029, tras el Día del Juicio Final.\nÚnete a la resistencia de John Connor para derrotar a Skynet.\nEnfréntate a hordas de T-800 y a los Hunter-Killers.\nDe 1 a 10 jugadores\n15 minutos",
-          "state": "normal"
-        },
-        {
-          "id": "J0002",
-          "name": "Arrowsong",
-          "description_web": "¿Podrás traer la paz al reino de las hadas?\n\n¡Orcos, goblins y un amenazante dragón están decididos a destruir el árbol sagrado! Tú y tu grupo de héroes han sido convocados para detener este mal y devolver la paz al reino de las hadas. ¡Una misión peligrosa que podría superar incluso al aventurero más experimentado!",
-          "video_url": "https://youtu.be/aAy0dgkn5GI",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483652/Arrowsong_kmmvr9.png",
-          "features_web": "Juego de tiro con arco apto para toda la familia.\nUna aventura cooperativa en un mundo de fantasía.\nDestruye al ejército de orcos.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
-          "state": "normal"
-        },
-        {
           "id": "J0063",
           "name": "Arrowsong: Dark Omen",
           "description_web": "Los demonios han invadido el pueblo y han corrompido a sus habitantes. Ahora vagan por las calles, sembrando la muerte y la destrucción. ¿Te alzarás para detenerlos y salvar el mundo?",
-          "video_url": "",
+          "video_url": "https://youtu.be/fn0AblCpYT0",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483653/Arrowsong-_Dark_Omen_tvb3od.png",
           "features_web": "Nuevos personajes, enemigos y mecánicas de juego\nMúltiples ubicaciones a lo largo de una oscura campaña centrada en la historia\nAcción cinematográfica y encuentros emocionantes\nUna aventura épica para evitar el fin del mundo",
-          "state": "proximamente"
+          "state": "novedad"
         },
         {
           "id": "J0060",
@@ -51,6 +33,24 @@
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483678/Space_Dance_Harmony_c8nbai.png",
           "features_web": "",
           "state": "proximamente"
+        },
+        {
+          "id": "J0032",
+          "name": "Terminator Uprising",
+          "description_web": "¡ESTRENO MUNDIAL!\n\nÚnete a la resistencia y lucha por la supervivencia de la humanidad en Terminator: Uprising.\n\nAmbientado en el año 2029, después de los eventos del Día del Juicio Final, lucha junto a la resistencia liderada por John Connor mientras se alzan para derrotar a Skynet de una vez por todas.\n\nDefiéndete de hordas de letales T-800, enfréntate a los temibles Hunter-Killers y derriba a la amenaza robótica para salvar a la humanidad.\n\n¿Tienes lo que se necesita para salvar a la humanidad? ¿O serás aplastado bajo las implacables fuerzas de Skynet?\n\n¡Únete a la lucha!",
+          "video_url": "https://youtu.be/j9PvZ0QKcJ4",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483682/Terminator_Uprising_hpc49v.png",
+          "features_web": "Lucha por la supervivencia humana.\nSe ambienta en el año 2029, tras el Día del Juicio Final.\nÚnete a la resistencia de John Connor para derrotar a Skynet.\nEnfréntate a hordas de T-800 y a los Hunter-Killers.\nDe 1 a 10 jugadores\n15 minutos",
+          "state": "normal"
+        },
+        {
+          "id": "J0002",
+          "name": "Arrowsong",
+          "description_web": "¿Podrás traer la paz al reino de las hadas?\n\n¡Orcos, goblins y un amenazante dragón están decididos a destruir el árbol sagrado! Tú y tu grupo de héroes han sido convocados para detener este mal y devolver la paz al reino de las hadas. ¡Una misión peligrosa que podría superar incluso al aventurero más experimentado!",
+          "video_url": "https://youtu.be/aAy0dgkn5GI",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483652/Arrowsong_kmmvr9.png",
+          "features_web": "Juego de tiro con arco apto para toda la familia.\nUna aventura cooperativa en un mundo de fantasía.\nDestruye al ejército de orcos.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
         },
         {
           "id": "J0023",
@@ -143,6 +143,15 @@
           "state": "novedad"
         },
         {
+          "id": "J0062",
+          "name": "Trials of Atlantis",
+          "description_web": "La legendaria ciudad sumergida te espera…\n\nSumérgete en las profundidades para recuperar Atlantis. Resuelve acertijos y supera pruebas llenas de acción en esta aventura de escape totalmente cooperativa.\n\nSolo los equipos más fuertes lograrán hacer resurgir a Atlantis de las profundidades.",
+          "video_url": "https://www.youtube.com/watch?v=tYLw0_DSNPg",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483682/Trials_of_Atlantis_eeaonv.png",
+          "features_web": "Sumérgete en las profundidades para recuperar Atlantis\nResuelve acertijos y supera pruebas llenas de acción\nUna aventura de escape totalmente cooperativa\nDiseñado en torno al trabajo en equipo y a esos momentos de «un intento más»",
+          "state": "novedad"
+        },
+        {
           "id": "J0028",
           "name": "School of Magic",
           "description_web": "En School of Magic, dominarás hechizos para convertirte en un verdadero mago. \n\nUsa tu varita, lanza bolas de fuego y resuelve acertijos en este escape room cooperativo. \n\nSupera cada prueba, descubre secretos y desafía al dragón. \n\n¡Libera tu poder y derrota a la oscuridad!",
@@ -150,15 +159,6 @@
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483675/School_of_Magic_vg9mdf.png",
           "features_web": "",
           "state": "novedad"
-        },
-        {
-          "id": "J0062",
-          "name": "Trials of Atlantis",
-          "description_web": "La legendaria ciudad sumergida te espera…\n\nSumérgete en las profundidades para recuperar Atlantis. Resuelve acertijos y supera pruebas llenas de acción en esta aventura de escape totalmente cooperativa.\n\nSolo los equipos más fuertes lograrán hacer resurgir a Atlantis de las profundidades.",
-          "video_url": "https://www.youtube.com/watch?v=tYLw0_DSNPg",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483682/Trials_of_Atlantis_eeaonv.png",
-          "features_web": "Sumérgete en las profundidades para recuperar Atlantis\nResuelve acertijos y supera pruebas llenas de acción\nUna aventura de escape totalmente cooperativa\nDiseñado en torno al trabajo en equipo y a esos momentos de «un intento más»",
-          "state": "proximamente"
         },
         {
           "id": "J0022",
