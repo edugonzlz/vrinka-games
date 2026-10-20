@@ -8,13 +8,31 @@
       "visible": true,
       "juegos": [
         {
-          "id": "J0063",
-          "name": "Arrowsong: Dark Omen",
-          "description_web": "Los demonios han invadido el pueblo y han corrompido a sus habitantes. Ahora vagan por las calles, sembrando la muerte y la destrucción. ¿Te alzarás para detenerlos y salvar el mundo?",
-          "video_url": "https://youtu.be/fn0AblCpYT0",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483653/Arrowsong-_Dark_Omen_tvb3od.png",
-          "features_web": "Nuevos personajes, enemigos y mecánicas de juego\nMúltiples ubicaciones a lo largo de una oscura campaña centrada en la historia\nAcción cinematográfica y encuentros emocionantes\nUna aventura épica para evitar el fin del mundo",
-          "state": "novedad"
+          "id": "J0006",
+          "name": "Cybershock",
+          "description_web": "Un shooter futurista de ritmo vertiginoso.\n\nTú y tu escuadrón de heroicos guerreros digitales intentáis erradicar el virus que ha tomado el control de vuestro sistema. Un shooter futurista de ritmo rápido con elementos de juego dinámicos. Esquiva láseres, balas, cortafuegos, todo mientras intentas destruir al enemigo con tus pistolas láser de doble empuñadura.",
+          "video_url": "https://www.youtube.com/watch?v=QGCNRYpfJdk",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483655/Cybershock_kx0ejm.png",
+          "features_web": "Shooter arcade retro.\n¡Esquiva, dispara, destruye!\nPon a prueba tus reflejos.\n¡Compite por la mejor puntuación!\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0008",
+          "name": "Dead Ahead",
+          "description_web": "¿Tienes lo que se necesita para sobrevivir al apocalipsis?\n\n¡El apocalipsis ha llegado! \nTú y tus amigos haréis una última defensa contra los no-muertos. Tendréis 30 segundos para preparar vuestras defensas y elegir vuestras armas antes de que los zombis ataquen. Con cada oleada, los zombis se vuelven más rápidos y la presión aumenta. ¿Tienes lo que hace falta para sobrevivir al apocalipsis?",
+          "video_url": "https://www.youtube.com/watch?v=ArbOQp6h4So",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483657/Dead_Ahead_mxbaja.png",
+          "features_web": "Disparar a zombis nunca fue tan divertido.\nAcción trepidante para los más atrevidos.\nRepara tus barricadas y ¡Sobrevive!.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0020",
+          "name": "Monkey Madness",
+          "description_web": "Juegos de la Selva es un divertido juego de fiesta donde competís para ganarse el favor del Gran Emperador Mono. \nEnfréntate hasta en 25 emocionantes desafíos de la selva que pondrán a prueba tu habilidad, ritmo, reflejos e incluso tu suerte.\nExplota globos, esquiva paredes, escala lianas, machaca clavos, sigue el ritmo en el juego de bongos, o lanza fruta con puntería perfecta. \n\nCada juego trae consigo nuevo caos y risas. Elige tus juegos favoritos o deja que la selva decida tu destino.\nRápido, divertido y ferozmente competitivo.\n\nTemático en Navidad y Halloween\n\nEl modo Halloween incluye:\n👻 Modelos de jugadores espeluznantes\n🎃 Paisajes y entornos embrujados\n🍎 Accesorios y frutas espeluznantes\n🦇 Audio y efectos de sonido escalofriantes",
+          "video_url": "https://www.youtube.com/watch?v=KCjXgfNrLy4",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483667/Monkey_Madness_rdl5wl.jpg",
+          "features_web": "Selección sobre 25 minijuegos.\nHazte una foto de grupo final.\nDe 2 a 10 jugadores.\nDe 10 a 20 minutos.",
+          "state": "normal"
         },
         {
           "id": "J0060",
@@ -24,6 +42,15 @@
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483685/Versus_bo1klc.png",
           "features_web": "Batallas PvP de hasta 8 jugadores\nModos Batalla por equipos y Todos contra todos\nModos competitivos Clásico y Pro\n6 mapas únicos para cada tamaño de arena\nUsa el bláster V99 y el escudo de energía\nCarga tu escudo para desatar un Megadisparo devastador",
           "state": "proximamente"
+        },
+        {
+          "id": "J0063",
+          "name": "Arrowsong: Dark Omen",
+          "description_web": "Los demonios han invadido el pueblo y han corrompido a sus habitantes. Ahora vagan por las calles, sembrando la muerte y la destrucción. ¿Te alzarás para detenerlos y salvar el mundo?",
+          "video_url": "https://youtu.be/fn0AblCpYT0",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483653/Arrowsong-_Dark_Omen_tvb3od.png",
+          "features_web": "Nuevos personajes, enemigos y mecánicas de juego\nMúltiples ubicaciones a lo largo de una oscura campaña centrada en la historia\nAcción cinematográfica y encuentros emocionantes\nUna aventura épica para evitar el fin del mundo",
+          "state": "novedad"
         },
         {
           "id": "J0061",
@@ -59,33 +86,6 @@
           "video_url": "https://www.youtube.com/watch?v=tc8Kh9HbhHE",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483671/Plush_Rush_llsz4o.png",
           "features_web": "Defensa de torres colaborativa.\nEres un pequeño peluche adorable.\nY tienes que defenderte de juguetes rebeldes que atacan.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
-          "state": "normal"
-        },
-        {
-          "id": "J0020",
-          "name": "Monkey Madness",
-          "description_web": "¡VERSIÓN NAVIDEÑA!\n\nMonkey Madness: Juegos de la Selva es un divertido juego de fiesta donde competís para ganarse el favor del Gran Emperador Mono. \nEnfréntate hasta en 25 emocionantes desafíos de la selva que pondrán a prueba tu habilidad, ritmo, reflejos e incluso tu suerte.\nExplota globos, esquiva paredes, escala lianas, machaca clavos, sigue el ritmo en el juego de bongos, o lanza fruta con puntería perfecta. \n\nCada juego trae consigo nuevo caos y risas. Elige tus juegos favoritos o deja que la selva decida tu destino.\nRápido, divertido y ferozmente competitivo, ¡Monkey Madness: Juegos de la Selva es el enfrentamiento de RV definitivo donde solo uno puede convertirse en el campeón del emperador!",
-          "video_url": "https://www.youtube.com/watch?v=KCjXgfNrLy4",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483667/Monkey_Madness_rdl5wl.jpg",
-          "features_web": "Selección sobre 25 minijuegos.\nHazte una foto de grupo final.\nDe 2 a 10 jugadores.\nDe 10 a 20 minutos.",
-          "state": "normal"
-        },
-        {
-          "id": "J0008",
-          "name": "Dead Ahead",
-          "description_web": "¿Tienes lo que se necesita para sobrevivir al apocalipsis?\n\n¡El apocalipsis ha llegado! \nTú y tus amigos haréis una última defensa contra los no-muertos. Tendréis 30 segundos para preparar vuestras defensas y elegir vuestras armas antes de que los zombis ataquen. Con cada oleada, los zombis se vuelven más rápidos y la presión aumenta. ¿Tienes lo que hace falta para sobrevivir al apocalipsis?",
-          "video_url": "https://www.youtube.com/watch?v=ArbOQp6h4So",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483657/Dead_Ahead_mxbaja.png",
-          "features_web": "Disparar a zombis nunca fue tan divertido.\nAcción trepidante para los más atrevidos.\nRepara tus barricadas y ¡Sobrevive!.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
-          "state": "normal"
-        },
-        {
-          "id": "J0006",
-          "name": "Cybershock",
-          "description_web": "Un shooter futurista de ritmo vertiginoso.\n\nTú y tu escuadrón de heroicos guerreros digitales intentáis erradicar el virus que ha tomado el control de vuestro sistema. Un shooter futurista de ritmo rápido con elementos de juego dinámicos. Esquiva láseres, balas, cortafuegos, todo mientras intentas destruir al enemigo con tus pistolas láser de doble empuñadura.",
-          "video_url": "https://www.youtube.com/watch?v=QGCNRYpfJdk",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483655/Cybershock_kx0ejm.png",
-          "features_web": "Shooter arcade retro.\n¡Esquiva, dispara, destruye!\nPon a prueba tus reflejos.\n¡Compite por la mejor puntuación!\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
           "state": "normal"
         },
         {
@@ -134,6 +134,33 @@
       "visible": true,
       "juegos": [
         {
+          "id": "J0003",
+          "name": "B-Block Breakout",
+          "description_web": "Juega el papel de un grupo de truhanes encarcelados en el infame Bloque B en esta emocionante sala de escape. Resuelve rompecabezas juntos mientras avanzas por el interior de la prisión hacia la libertad.",
+          "video_url": "https://vimeo.com/836086687",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483661/B-Block_Breakout_h01fmh.png",
+          "features_web": "Aventura de escape.\nEscapa de la cárcel con tus compañeros.\nResuelve acertijos para alcanzar la libertad.\nDe 2 a 6 jugadores.\nDe 40 a 55 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0022",
+          "name": "Parvus Box",
+          "description_web": "En Parvus Box te necesitamos para un pequeño experimento…\n\nTe has ofrecido como voluntario para probar un dispositivo experimental capaz de reducirte a un tamaño microscópico. Cuando el experimento sale mal, tendrás que trabajar en equipo y resolver acertijos colaborativos para volver a tu tamaño normal.",
+          "video_url": "https://vimeo.com/1008766478",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483668/Parvus_Box_ybqz5t.png",
+          "features_web": "Escape room para todas las edades.\nCientíficos locos haciendo locuras.\nRecupera tu tamaño natural después de un experimento fallido.\nDe 2 a 6 jugadores.\nDe 40 a 55 minutos.",
+          "state": "normal"
+        },
+        {
+          "id": "J0026",
+          "name": "Riddle of Ruins",
+          "description_web": "¡Prepárate para una emocionante aventura en Riddle of Ruins! Adéntrate en un misterioso templo lleno de enigmas y desafíos que pondrán a prueba tu ingenio. Resuelve los acertijos, desbloquea secretos ocultos y supera este trepidante reto de escape.  \n\n¿Tienes lo necesario para descifrar los misterios del templo? ¡Sumérgete en la aventura y descúbrelo!",
+          "video_url": "https://vimeo.com/1058185902/42c089fda6?share=copy",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483674/Riddle_of_Ruins_a86jly.png",
+          "features_web": "Aventura de escape.\nAdéntrate en un misterioso templo lleno de enigmas.\nResuelve los acertijos y desbloquea secretos ocultos.\nRecomendado para 4/5 jugadores.\nDe 40 a 45 minutos.",
+          "state": "normal"
+        },
+        {
           "id": "J0034",
           "name": "Wayfinders",
           "description_web": "¡Prepárate para un emocionante viaje espacial lleno de adrenalina!\n\nEsta aventura combina a la perfección secuencias interactivas con acción cinematográfica, manteniéndote al borde del asiento de principio a fin. \nViaja al corazón de la estación Aurora, que está al borde de la destrucción. \n\n¿Tu misión? Navegar a través de las devastadas salas de la estación y salvar a su tripulación antes de que sea demasiado tarde.",
@@ -148,7 +175,7 @@
           "description_web": "La legendaria ciudad sumergida te espera…\n\nSumérgete en las profundidades para recuperar Atlantis. Resuelve acertijos y supera pruebas llenas de acción en esta aventura de escape totalmente cooperativa.\n\nSolo los equipos más fuertes lograrán hacer resurgir a Atlantis de las profundidades.",
           "video_url": "https://www.youtube.com/watch?v=tYLw0_DSNPg",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483682/Trials_of_Atlantis_eeaonv.png",
-          "features_web": "Sumérgete en las profundidades para recuperar Atlantis\nResuelve acertijos y supera pruebas llenas de acción\nUna aventura de escape totalmente cooperativa\nDiseñado en torno al trabajo en equipo y a esos momentos de «un intento más»",
+          "features_web": "Sumérgete en una Atlántida visualmente deslumbrante.\nPon a prueba tus habilidades mentales y físicas.\nDomina un desafío o elige uno diferente.\n¿Lograrás hacer resurgir Atlántida y restaurar su gloria?.",
           "state": "proximamente"
         },
         {
@@ -159,33 +186,6 @@
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483675/School_of_Magic_vg9mdf.png",
           "features_web": "",
           "state": "novedad"
-        },
-        {
-          "id": "J0022",
-          "name": "Parvus Box",
-          "description_web": "En Parvus Box te necesitamos para un pequeño experimento…\n\nTe has ofrecido como voluntario para probar un dispositivo experimental capaz de reducirte a un tamaño microscópico. Cuando el experimento sale mal, tendrás que trabajar en equipo y resolver acertijos colaborativos para volver a tu tamaño normal.",
-          "video_url": "https://vimeo.com/1008766478",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483668/Parvus_Box_ybqz5t.png",
-          "features_web": "Escape room para todas las edades.\nCientíficos locos haciendo locuras.\nRecupera tu tamaño natural después de un experimento fallido.\nDe 2 a 6 jugadores.\nDe 40 a 55 minutos.",
-          "state": "normal"
-        },
-        {
-          "id": "J0003",
-          "name": "B-Block Breakout",
-          "description_web": "Juega el papel de un grupo de truhanes encarcelados en el infame Bloque B en esta emocionante sala de escape. Resuelve rompecabezas juntos mientras avanzas por el interior de la prisión hacia la libertad.",
-          "video_url": "https://vimeo.com/836086687",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483661/B-Block_Breakout_h01fmh.png",
-          "features_web": "Aventura de escape.\nEscapa de la cárcel con tus compañeros.\nResuelve acertijos para alcanzar la libertad.\nDe 2 a 6 jugadores.\nDe 40 a 55 minutos.",
-          "state": "normal"
-        },
-        {
-          "id": "J0026",
-          "name": "Riddle of Ruins",
-          "description_web": "¡Prepárate para una emocionante aventura en Riddle of Ruins! Adéntrate en un misterioso templo lleno de enigmas y desafíos que pondrán a prueba tu ingenio. Resuelve los acertijos, desbloquea secretos ocultos y supera este trepidante reto de escape.  \n\n¿Tienes lo necesario para descifrar los misterios del templo? ¡Sumérgete en la aventura y descúbrelo!",
-          "video_url": "https://vimeo.com/1058185902/42c089fda6?share=copy",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483674/Riddle_of_Ruins_a86jly.png",
-          "features_web": "Aventura de escape.\nAdéntrate en un misterioso templo lleno de enigmas.\nResuelve los acertijos y desbloquea secretos ocultos.\nRecomendado para 4/5 jugadores.\nDe 40 a 45 minutos.",
-          "state": "normal"
         },
         {
           "id": "J0017",
@@ -209,10 +209,19 @@
           "id": "J0013",
           "name": "Insanity The Haunting",
           "description_web": "El Dr. Nikolov perdió a su esposa en un terrible accidente. Su única hija, Maureen, presenció la tragedia y nunca volvió a ser la misma. Nikolov abandonó la medicina y se dedicó a algo mucho más siniestro.\n\nUna noche fatídica, realizó un ritual para invocar una entidad poderosa, con la esperanza de que salvara a Maureen. Pero algo salió mal...\n\nEl asilo fue consumido por la sangre y la oscuridad y nunca más se supo de nadie.",
-          "video_url": "https://www.youtube.com/watch?v=FjMr5ZrPXFk",
+          "video_url": "https://youtube.com/shorts/SYngBeZC5rc",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483661/Insanity_The_Haunting_cxfkeo.jpg",
           "features_web": "",
           "state": "normal"
+        },
+        {
+          "id": "J0070",
+          "name": "The Ghoulies",
+          "description_web": "Es una terrorífica noche de Halloween y tus amigos y tú habéis aceptado el reto de entrar en la casa abandonada de un difunto asesino en serie, la cual dicen que está encantada por el espíritu del propio hombre y las almas de sus muchas víctimas. \n\nRecorred la espeluznante casa y trabajad en equipo para encontrar los objetos que os han desafiado a recoger antes de que se agote el tiempo y quedéis atrapados para siempre. \n\n¿Seréis capaces de escapar a tiempo?",
+          "video_url": "https://youtu.be/pykPmDx7y7c",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1791020949/game_covers/punyyrahhrwaat9ab6hj.jpg",
+          "features_web": "",
+          "state": "proximamente"
         },
         {
           "id": "J0017",
