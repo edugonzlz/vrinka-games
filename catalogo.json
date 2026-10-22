@@ -35,6 +35,15 @@
           "state": "normal"
         },
         {
+          "id": "J0023",
+          "name": "Plush Rush",
+          "description_web": "Plush Rush combina risas con estrategia y lleva a tu equipo a un mundo de juguetes a gran escala.\n\nPlush Rush es la aventura definitiva de defensa de torres en VR, apta para toda la familia. Redúcete al tamaño de un juguete, forma equipo con tu grupo y protege el tarro de caramelos de oleadas de enemigos traviesos. Fácil de aprender, increíblemente divertida y perfecta para grupos.\n\nY con versión Navideña.",
+          "video_url": "https://youtu.be/ZGrRyF3CucY",
+          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483671/Plush_Rush_llsz4o.png",
+          "features_web": "Defensa de torres colaborativa.\nEres un pequeño peluche adorable.\nY tienes que defenderte de juguetes rebeldes que atacan.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
+          "state": "normal"
+        },
+        {
           "id": "J0060",
           "name": "Versus",
           "description_web": "Laser Tag - Shooter PvP\n\nVersus es un juego de laser tag en realidad virtual retrofuturista. Prepárate para épicas batallas en equipo con tu bláster V99 y tu escudo en este juego de disparos en primera persona lleno de acción.\n\nAdéntrate en una arena de laser tag en realidad virtual retrofuturista, diseñada para una acción competitiva trepidante.",
@@ -77,15 +86,6 @@
           "video_url": "https://youtu.be/aAy0dgkn5GI",
           "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483652/Arrowsong_kmmvr9.png",
           "features_web": "Juego de tiro con arco apto para toda la familia.\nUna aventura cooperativa en un mundo de fantasía.\nDestruye al ejército de orcos.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
-          "state": "normal"
-        },
-        {
-          "id": "J0023",
-          "name": "Plush Rush",
-          "description_web": "¡VERSIÓN NAVIDEÑA!\n\nPlush Rush combina risas con estrategia y lleva a tu equipo a un mundo de juguetes a gran escala.\n\nPlush Rush es la aventura definitiva de defensa de torres en VR, apta para toda la familia. Redúcete al tamaño de un juguete, forma equipo con tu grupo y protege el tarro de caramelos de oleadas de enemigos traviesos. Fácil de aprender, increíblemente divertida y perfecta para grupos.",
-          "video_url": "https://www.youtube.com/watch?v=tc8Kh9HbhHE",
-          "cover_url": "https://res.cloudinary.com/wfmrl2ru/image/upload/v1785483671/Plush_Rush_llsz4o.png",
-          "features_web": "Defensa de torres colaborativa.\nEres un pequeño peluche adorable.\nY tienes que defenderte de juguetes rebeldes que atacan.\nDe 1 a 10 jugadores. \nDe 10 a 15 minutos.",
           "state": "normal"
         },
         {
